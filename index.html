@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cioré Site Update Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --obsidian: #0e0e0f;
+      --surface: #161618;
+      --card: #1c1c1f;
+      --border: #2a2a2e;
+      --eco: #4ade80;
+      --eco-dim: #1a3d28;
+      --muted: #888890;
+      --text: #e8e8ec;
+      --soft: #c4c4cc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--obsidian);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      padding: 48px 24px 80px;
+    }
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--eco);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.1rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 48px;
+    }
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--eco);
+      border-radius: 10px;
+      padding: 22px 26px;
+      font-size: 0.97rem;
+      color: var(--soft);
+      margin-bottom: 44px;
+      line-height: 1.8;
+    }
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--eco);
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section {
+      margin-bottom: 42px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    p {
+      color: var(--soft);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+    .tag {
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--eco-dim);
+      color: var(--eco);
+      letter-spacing: 0.04em;
+    }
+    .note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .note strong {
+      color: var(--soft);
+      font-weight: 500;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 44px 0;
+    }
+    .footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="eyebrow">Cioré Technology</div>
+  <h1>Homepage &amp; Site Update Notes</h1>
+  <p class="subtitle">A friendly walkthrough of where we are and where we want to go</p>
+
+  <div class="intro">
+    Hey! First things first — the site looks really good. I love the direction and the overall feel of it. These notes are not a critique, just a few updates I want to walk through so we are all on the same page. I put together a version of the homepage to show what I had in mind visually, so you can reference that alongside this. I wanted to keep things easy to skim so nothing gets lost.
+  </div>
+
+  <div class="section-label">Section 01 — Homepage</div>
+
+  <div class="section">
+    <h2>Navigation Tabs</h2>
+    <p>Right now the current nav reads: Overview, Career Duties, Qualifications, Training &amp; Education, and Transparency. That framing is more contributor and career focused, which makes sense for an internal page, but for the main homepage we want visitors to be able to immediately do one of four things when they land.</p>
+    <div class="tag-row">
+      <span class="tag">Overview</span>
+      <span class="tag">Waitlist</span>
+      <span class="tag">Donations</span>
+      <span class="tag">Apply to Be a Contributor</span>
+      <span class="tag">Contact Us</span>
+    </div>
+    <p>The click behavior can stay exactly the same — click a tab and it scrolls to that section. Just the labels and the section destinations change.</p>
+  </div>
+
+  <div class="section">
+    <h2>Overview Section</h2>
+    <p>We have the hero that says "We're Taking Tech Back" and a small privacy first callout, but the homepage does not currently explain what we are building or what problem we are solving. The overview section should be the place that does that. This is the first thing a new visitor sees and we want them to immediately understand who we are, what the Cioré phone is, and why it matters.</p>
+    <div class="note"><strong>Goal:</strong> Visitors leave the overview section knowing what we build, the problem we solve, and how we are solving it.</div>
+  </div>
+
+  <div class="section">
+    <h2>Waitlist Section</h2>
+    <p>I built a waitlist form directly into the page so people do not have to leave or use a Google Form. It is already linked to a Google Sheet where responses will collect. I still need to connect it to EmailOctopus so the welcome email fires automatically — I am planning to do that tomorrow. This keeps everything in house and feels a lot more polished than an external form.</p>
+  </div>
+
+  <div class="section">
+    <h2>Support the Mission Section</h2>
+    <p>This section introduces Operation Takeover and gives people a way to contribute financially. I know Micheline is still working on the payment links, so this section can stay as a placeholder or we can simplify it to just a direct donate button for now. Either way works. The section also explains what we plan to do with the funds and how contributors will stay in the loop.</p>
+  </div>
+
+  <div class="section">
+    <h2>Apply to Be a Contributor Section</h2>
+    <p>This section has two separate applications — one for contributors and one for collaborators. Both are already connected to their own Google Sheets. I want to make the difference between contributor and collaborator clear right on the page so people self sort before they apply. I also still need to hook both forms into our email platform so applicants get a confirmation and I get notified when something comes in.</p>
+  </div>
+
+  <div class="section">
+    <h2>Contact Us Section</h2>
+    <p>A lot of people reach out with tips, product suggestions, or general questions and right now there is no easy place on the site for that. This section gives them a simple way to send something directly to us without having to hunt down an email address. It covers tips, phone feature suggestions, and anything else not covered elsewhere on the site.</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section-label">Section 02 — Other Pages</div>
+
+  <div class="section">
+    <h2>Newsletter Page → Waitlist Page</h2>
+    <p>Renaming this page from Newsletter to Waitlist. We do not want people to feel like they are signing up for a generic newsletter. We want it to be clear that joining the waitlist means you are first in line for the phone. We can note that waitlist members also receive updates, but the primary identity of the page should be waitlist.</p>
+  </div>
+
+  <div class="section">
+    <h2>Milestones and Progress Page</h2>
+    <p>The milestones page is ready to be updated. Here is an overview of what we have already accomplished that should be reflected there. This is real, meaningful groundwork and it deserves to be visible.</p>
+    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 22px 26px; margin-top: 14px;">
+      <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--eco); margin-bottom: 16px;">Completed Milestones</div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Trademark and legal filing submitted</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Hardware concept established and modular design definition completed</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Operating system framework set and first features outlined</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>In depth research completed on privacy practices, secure architecture, and cryptosystems</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Market research completed on smartphone usage, user concerns, and ethical technology trends</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Operating system architecture drafted</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Sustainable materials, suppliers, and potential engineering collaborators explored</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Core materials identified for an eco friendly phone casing</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Legal and compliance considerations researched related to solar assisted devices</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Conversations initiated with education and privacy focused groups around future collaboration and learning opportunities</li>
+        <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.93rem; color: var(--soft);"><span style="color: var(--eco); margin-top: 3px; flex-shrink: 0;">&#10003;</span>Give and Grow initiative transitioned into a structured internship opportunity</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Investor and Donations Page</h2>
+    <p>This page is now live. You can view it here: <a href="https://ciore-investor-donations-page.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #4ade80; text-decoration: none; border-bottom: 1px solid #4ade8060;">ciore-investor-donations-page.vercel.app</a></p>
+    <p>One of the most important things we wanted to get right on this page is the distinction between investment support and donation support. These are two genuinely different paths and the language needed to reflect that clearly. When someone invests, they are entering a financial relationship with an expectation of return. When someone donates, they are offering support because they believe in what we are building with no expectation of a return. The page now communicates both paths in a way that aligns expectations from the start and makes it easy for supporters to understand which option fits them.</p>
+    <p>The investment support tiers were also adjusted slightly. Because we are still in an early stage of building, the tiers were updated to better reflect where we are right now and what the current landscape calls for. The structure feels more grounded and appropriate for this phase of the company.</p>
+    <p>Payment links are included as part of the page flow, so supporters can move from reading to taking action without any friction.</p>
+    <div class="note"><strong>Note:</strong> The wording around invest versus donate is intentional and should stay consistent across any other pages or materials that reference financial support.</div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="section-label">Section 03 — Internal Overview</div>
+
+  <div class="section">
+    <h2>Internal Overview Page</h2>
+    <p>The internal overview example is complete. It has been updated with our most current information and is ready for review now. I can continue updating the content as things evolve, but this version is solid and reflects where we are today.</p>
+    <p>You can access it here: <a href="https://internal-hub-d9wx.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #4ade80; text-decoration: none; border-bottom: 1px solid #4ade8060;">internal-hub-d9wx.vercel.app</a></p>
+    <div class="note" style="margin-top: 14px;">
+      <strong>Reviewer note:</strong> When you land on the page, try entering any incorrect password first so you can see how the locked state looks. The actual password is <span style="color: var(--soft); font-weight: 500;">ciore2026</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Access Tracking</h2>
+    <p>The internal overview page includes access tracking and logging. This means that visit activity on the page is recorded and can be reviewed. This was an intentional addition. We had a past security concern involving outside contact with members of the team, and having visibility into who accessed the page and when gives us an added layer of awareness going forward.</p>
+    <p>This is not about creating a surveillance environment for the team. It is about having a reasonable record of access activity that we can reference if we ever need to. The access log can be reviewed through the logging view built into the page.</p>
+    <div class="note"><strong>Note:</strong> The tracking captures general access activity and visit data. It is not a guarantee of personal identity confirmation, but it does give us meaningful visibility into page access over time.</div>
+  </div>
+
+  <hr class="divider"/>
+
+
+    <strong>Heads up:</strong> I also put together a Vercel preview that shows what I had in mind for the homepage layout. I tried to match the style and feel of the current site as closely as possible — the main difference is the section content and a placeholder image for where the prototype will eventually live. You can view it here: <a href="https://ciore-site-preview.vercel.app" target="_blank" style="color: #4ade80; text-decoration: none; border-bottom: 1px solid #4ade8060;">ciore-site-preview.vercel.app</a>
+  </div>
+
+  <div class="footer">
+    Cioré Technology — Internal Team Notes &nbsp;·&nbsp; Not for external distribution
+  </div>
+
+</div>
+</body>
+</html>
