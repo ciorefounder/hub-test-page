@@ -10,7 +10,7 @@
 <style>
 
 /* ═══════════════════════════════════════════════════════
-   CIORÉ CONTRIBUTOR HUB, v29
+   CIORÉ CONTRIBUTOR HUB, v30
    Light theme · Charcoal structure · Eco green accent
 ═══════════════════════════════════════════════════════ */
 
@@ -276,8 +276,6 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   text-shadow: 0 0 20px rgba(24,165,88,0.4);
 }
-.nav-icon { width: 14px; flex-shrink: 0; }
-.nav-icon svg { display: block; }
 
 .sidebar-footer {
   padding: 12px 12px 16px;
@@ -311,17 +309,6 @@ img { max-width: 100%; display: block; }
   flex: 1; min-height: 100vh;
   display: flex; flex-direction: column;
 }
-.conf-ribbon {
-  background: var(--green-3);
-  border-bottom: 1px solid var(--green-4);
-  padding: 7px 32px;
-  font-family: var(--f-ui); font-size: 11px; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--green-2);
-  display: flex; align-items: center; gap: 8px;
-  flex-shrink: 0;
-}
-.conf-pip { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 .cx { flex: 1; }
 .panel {
   display: none; padding: 44px 44px 80px;
@@ -335,8 +322,45 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════
-   HOME PANEL (p0home)
+   HOME PANEL & DASHBOARD
 ═══════════════════════════════════════════════════════ */
+.ph-action-banner {
+  background: linear-gradient(135deg, rgba(24,165,88,0.12) 0%, rgba(24,165,88,0.04) 100%);
+  border: 1px solid var(--green-border);
+  border-radius: var(--r-md);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.ph-action-banner-eyebrow {
+  font-family: var(--f-ui); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 4px;
+}
+.ph-action-banner-title {
+  font-family: var(--f-ui); font-size: 18px; font-weight: 700;
+  color: var(--ink); margin-bottom: 4px;
+}
+.ph-action-banner-text {
+  font-size: 13.5px; color: var(--ink-2); line-height: 1.5; max-width: 580px;
+}
+.ph-action-banner-sub {
+  font-size: 12px; color: var(--ink-3); margin-top: 6px; font-style: italic;
+}
+.ph-action-btn {
+  padding: 12px 22px; background: var(--green); color: #fff;
+  font-family: var(--f-ui); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border: none; border-radius: var(--r-sm); cursor: pointer;
+  white-space: nowrap; transition: background 0.18s;
+  flex-shrink: 0; box-shadow: var(--shadow-xs);
+}
+.ph-action-btn:hover { background: var(--green-2); }
+
 .ph-hero {
   background: linear-gradient(135deg, #0d1117 0%, #0e1f15 55%, #0d1117 100%);
   border-radius: var(--r-lg);
@@ -353,13 +377,6 @@ img { max-width: 100%; display: block; }
     radial-gradient(ellipse 40% 50% at 5% 90%, rgba(24,165,88,0.10) 0%, transparent 55%);
   pointer-events: none;
 }
-.ph-hero::after {
-  content: '';
-  position: absolute; right: -50px; top: -50px;
-  width: 340px; height: 340px; border-radius: 50%;
-  border: 1px solid rgba(24,165,88,0.07);
-  pointer-events: none;
-}
 .ph-eyebrow {
   font-family: var(--f-ui); font-size: 11px; font-weight: 700;
   letter-spacing: 0.18em; text-transform: uppercase;
@@ -374,42 +391,6 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,0.65); max-width: 500px; margin-bottom: 22px;
 }
 
-/* ── Dashboard Action Banner ────────────────────────── */
-.ph-action-banner {
-  background: linear-gradient(135deg, rgba(24,165,88,0.16) 0%, rgba(20,132,74,0.08) 100%);
-  border: 1px solid var(--green-border);
-  border-radius: var(--r-md);
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  display: flex; flex-direction: column; gap: 8px;
-  box-shadow: var(--shadow-sm);
-}
-.ph-action-banner-eyebrow {
-  font-family: var(--f-ui); font-size: 10px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-2);
-}
-.ph-action-banner-heading {
-  font-family: var(--f-ui); font-size: 20px; font-weight: 700;
-  color: var(--ink); line-height: 1.2;
-}
-.ph-action-banner-copy {
-  font-size: 14px; color: var(--ink-2); line-height: 1.5; max-width: 680px;
-}
-.ph-action-banner-btn-wrap { margin-top: 4px; }
-.ph-action-banner-btn {
-  display: inline-block; padding: 10px 20px;
-  background: var(--green); color: #fff;
-  font-family: var(--f-ui); font-size: 11px; font-weight: 700;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  border: none; border-radius: var(--r-sm); cursor: pointer;
-  transition: background 0.16s var(--ease);
-}
-.ph-action-banner-btn:hover { background: var(--green-2); text-decoration: none; }
-.ph-action-banner-note {
-  font-size: 12px; color: var(--ink-3); font-style: italic; margin-top: 2px;
-}
-
-/* ── Two-column dashboard layout ────────────────────── */
 .ph-layout {
   display: grid; grid-template-columns: 1fr 272px;
   gap: 18px; margin-bottom: 24px; align-items: start;
@@ -417,23 +398,22 @@ img { max-width: 100%; display: block; }
 .ph-main { display: flex; flex-direction: column; gap: 18px; }
 .ph-aside { display: flex; flex-direction: column; gap: 14px; }
 
-/* Section headers */
 .ph-section-head {
   display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 10px; width: 100%;
 }
 .ph-section-title {
   font-family: var(--f-ui); font-size: 14px; font-weight: 700;
-  letter-spacing: 0.04em; color: var(--ink);
+  letter-spacing: 0.04em; color: var(--ink); margin: 0; line-height: 1;
 }
 .ph-see-all {
   font-family: var(--f-ui); font-size: 11px; font-weight: 700;
   letter-spacing: 0.10em; color: var(--green); text-transform: uppercase;
   background: none; border: none; cursor: pointer; transition: opacity 0.14s;
+  padding: 0; line-height: 1; margin: 0;
 }
 .ph-see-all:hover { opacity: 0.7; }
 
-/* Dashboard stat cards */
 .ph-dash-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
 }
@@ -443,6 +423,7 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-sm); cursor: pointer;
   position: relative; overflow: hidden;
   transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  display: flex; flex-direction: column;
 }
 .ph-dash-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green) 0%, rgba(24,165,88,0.3) 100%); opacity: 0; transition: opacity 0.18s; }
 .ph-dash-card:hover { border-color: var(--green-border); box-shadow: var(--shadow-md); transform: translateY(-2px); }
@@ -453,20 +434,19 @@ img { max-width: 100%; display: block; }
   margin-bottom: 4px;
 }
 .ph-dash-card-value {
-  font-family: var(--f-display); font-size: 22px; line-height: 1.1;
-  letter-spacing: 0.02em; color: var(--ink); margin-bottom: 4px;
+  font-family: var(--f-display); font-size: 20px; line-height: 1.15;
+  letter-spacing: 0.02em; color: var(--ink); margin-bottom: 6px;
 }
-.ph-dash-card-sub { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+.ph-dash-card-sub { font-size: 12px; color: var(--ink-3); line-height: 1.4; flex: 1; }
 .ph-dash-card-cta {
-  display: inline-block; margin-top: 8px; padding: 4px 10px;
+  display: inline-block; margin-top: 10px; padding: 4px 10px;
   background: transparent; border: 1px solid var(--border-2); border-radius: 3px;
   font-family: var(--f-ui); font-size: 10px; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3);
-  cursor: pointer; transition: all 0.13s;
+  cursor: pointer; transition: all 0.13s; width: fit-content;
 }
 .ph-dash-card-cta:hover { border-color: var(--green); color: var(--green); }
 
-/* Feature nav cards (2 col) */
 .ph-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .ph-feature-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -491,7 +471,6 @@ img { max-width: 100%; display: block; }
 }
 .ph-feature-card:hover .ph-feature-card-arrow { transform: translateX(4px); }
 
-/* Aside widgets */
 .ph-widget {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--r-md); padding: 18px 16px; box-shadow: var(--shadow-sm);
@@ -501,9 +480,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--f-ui); font-size: 13px; font-weight: 700;
   letter-spacing: 0.04em; color: var(--ink); margin-bottom: 11px;
 }
-.ph-widget-divider { height: 1px; background: var(--border); margin: 9px 0; }
 
-/* App tiles */
 .ph-apps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; }
 .ph-app-tile {
   aspect-ratio: 1; border-radius: var(--r-sm); padding: 8px 4px;
@@ -530,7 +507,6 @@ img { max-width: 100%; display: block; }
 .apt-amber  { background: rgba(245,158,11,0.12); color: #d97706; }
 .apt-rose   { background: rgba(244,63,94,0.10);  color: #f43f5e; }
 
-/* People search */
 .ph-people-search {
   width: 100%; padding: 8px 11px; background: var(--surface-2);
   border: 1px solid var(--border); border-radius: var(--r-sm);
@@ -547,7 +523,6 @@ img { max-width: 100%; display: block; }
 }
 .ph-dir-btn:hover { background: var(--green); }
 
-/* Next steps */
 .ph-next-list { display: flex; flex-direction: column; gap: 7px; }
 .ph-next-item {
   display: flex; align-items: flex-start; gap: 9px; padding: 9px 11px;
@@ -558,30 +533,6 @@ img { max-width: 100%; display: block; }
 .ph-next-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 6px; }
 .ph-next-text { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
 .ph-next-label { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 2px; }
-
-/* Bottom sections */
-.ph-section { margin-bottom: 0; }
-.ph-section-secondary { margin-bottom: 0; }
-.ph-section-desc { font-size: 14px; color: var(--ink-3); margin-bottom: 12px; }
-.ph-nav-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 10px; }
-.ph-nav-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
-  padding: 18px 18px 16px; cursor: pointer; display: flex; flex-direction: column;
-  transition: all 0.18s; box-shadow: var(--shadow-xs);
-}
-.ph-nav-card:hover { border-color: var(--green); box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.ph-nav-card-accent { width: 26px; height: 3px; background: var(--green); border-radius: 2px; margin-bottom: 11px; transition: width 0.18s; }
-.ph-nav-card:hover .ph-nav-card-accent { width: 38px; }
-.ph-nav-card-body { flex: 1; }
-.ph-nav-card-title { font-family: var(--f-ui); font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
-.ph-nav-card-text { font-size: 13px; color: var(--ink-3); line-height: 1.55; }
-.ph-nav-card-arrow { align-self: flex-end; font-size: 14px; color: var(--green); margin-top: 10px; transition: transform 0.16s; }
-.ph-nav-card:hover .ph-nav-card-arrow { transform: translateX(4px); }
-.ph-quick-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(168px,1fr)); gap: 7px; }
-.ph-quick-item { padding: 13px 15px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); cursor: pointer; box-shadow: var(--shadow-xs); transition: all 0.14s; }
-.ph-quick-item:hover { border-color: var(--green); background: var(--green-3); }
-.ph-quick-label { font-family: var(--f-ui); font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-.ph-quick-sub { font-size: 12px; color: var(--ink-3); }
 
 /* ═══════════════════════════════════════════════════════
    SHARED PANEL COMPONENTS
@@ -671,11 +622,6 @@ img { max-width: 100%; display: block; }
   font-family: var(--f-display); font-size: 18px; letter-spacing: 0.04em;
   color: var(--green); flex-shrink: 0; min-width: 54px; line-height: 1.4;
 }
-.ph-title {
-  font-family: var(--f-ui); font-size: 13.5px; font-weight: 700;
-  letter-spacing: 0.02em; color: var(--ink); margin-bottom: 4px;
-}
-.ph-body { font-size: 13.5px; line-height: 1.65; color: var(--ink-3); }
 .st { width: 100%; border-collapse: collapse; border-radius: var(--r-md); overflow: hidden; }
 .st th {
   font-family: var(--f-ui); font-size: 10.5px; font-weight: 700;
@@ -705,7 +651,7 @@ img { max-width: 100%; display: block; }
   transition: all 0.14s var(--ease);
 }
 .jump-link:hover { border-color: var(--green); color: var(--green); text-decoration: none; }
-/* Progress panel */
+
 .pg-card { padding: 20px 20px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); margin-bottom: 10px; box-shadow: var(--shadow-xs); }
 .pg-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; flex-wrap: wrap; }
 .pg-card-title { font-family: var(--f-ui); font-size: 15px; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); }
@@ -716,22 +662,20 @@ img { max-width: 100%; display: block; }
 .pg-badge-progress { background: var(--gold-3); border: 1px solid var(--gold-4); color: var(--gold); }
 .pg-badge-active { background: var(--green-3); border: 1px solid var(--green-4); color: var(--green); }
 .pg-badge-open { background: var(--surface-2); border: 1px solid var(--border); color: var(--ink-3); }
-.pg-lume-phases { display: flex; flex-direction: column; gap: 1px; margin: 8px 0; }
-.pg-lume-row { display: flex; gap: 16px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); }
-.pg-lume-num { font-family: var(--f-display); font-size: 16px; color: var(--green); flex-shrink: 0; min-width: 52px; line-height: 1.4; }
-.pg-lume-title { font-family: var(--f-ui); font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
-.pg-lume-body { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
-.pg-roles-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 8px; margin: 8px 0; }
-.pg-role-item { padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); }
-.pg-role-title { font-family: var(--f-ui); font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-.pg-role-body { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; }
-.pg-help-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
-.pg-help-tag { padding: 4px 11px; font-family: var(--f-ui); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; background: var(--surface); border: 1px solid var(--border); color: var(--ink-3); border-radius: 3px; }
-.pg-help-tag.green { border-color: var(--green-4); color: var(--green); background: var(--green-3); }
-.pg-phase-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0; }
-.pg-phase-item { display: flex; align-items: center; gap: 7px; }
-.pg-phase-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
-.pg-phase-text { font-size: 14px; color: var(--ink-2); }
+.pg-channel-label { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-top: 12px; margin-bottom: 3px; }
+.pg-channel-body { font-size: 13px; color: var(--ink-2); }
+
+/* Quick start fit cards */
+.fit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.fit-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 14px; cursor: pointer; transition: all 0.16s var(--ease); box-shadow: var(--shadow-xs);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.fit-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.fit-card-title { font-family: var(--f-ui); font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.fit-card-body { font-size: 12px; color: var(--ink-3); line-height: 1.45; margin-bottom: 10px; }
+.fit-card-link { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
 
 /* ── Form styles ─────────────────────────────────────── */
 .cf-form-wrap { max-width: 680px; }
@@ -758,12 +702,6 @@ img { max-width: 100%; display: block; }
 .cf-error-state-icon { font-size: 20px; color: var(--danger); margin-bottom: 7px; }
 .cf-error-state-title { font-family: var(--f-ui); font-size: 14px; font-weight: 700; color: var(--danger); margin-bottom: 5px; }
 .cf-error-state-body { font-size: 14px; color: var(--ink-3); }
-.cf-route-note { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: var(--gold-3); border: 1px solid var(--gold-4); border-radius: var(--r-sm); margin-bottom: 24px; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
-.cf-route-icon { font-size: 15px; flex-shrink: 0; }
-.cf-timing-note { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); margin: 10px 0 24px; }
-.cf-timing-icon { font-size: 16px; flex-shrink: 0; }
-.cf-timing-title { font-family: var(--f-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink); margin-bottom: 3px; }
-.cf-timing-body { font-size: 13px; color: var(--ink-3); }
 .cf-toggle-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
 .cf-toggle-opt { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; color: var(--ink-2); }
 .cf-radio { accent-color: var(--green); }
@@ -805,11 +743,7 @@ img { max-width: 100%; display: block; }
 .cd-state-body { font-size: 14.5px; line-height: 1.75; color: var(--ink-3); }
 .cd-spinner { width: 24px; height: 24px; border: 2px solid var(--border-2); border-top-color: var(--green); border-radius: 50%; animation: cd-spin 0.65s linear infinite; margin: 0 auto 12px; }
 @keyframes cd-spin { to { transform: rotate(360deg); } }
-.cd-join-wrap { margin-top: 48px; padding: 28px 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); max-width: 680px; box-shadow: var(--shadow-xs); }
-.cd-join-heading { font-family: var(--f-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-bottom: 9px; }
-.cd-join-body { font-size: 14px; line-height: 1.75; color: var(--ink-2); margin-bottom: 22px; }
 
-/* ── Discord panel additions ─────────────────────────── */
 .swatch-row-light { display: flex; flex-wrap: wrap; gap: 12px; margin: 4px 0; }
 .sw-item { display: flex; align-items: center; gap: 9px; }
 .sw-dot { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border); }
@@ -820,12 +754,6 @@ img { max-width: 100%; display: block; }
 .ap-preview-icon { font-size: 12px; color: var(--green); }
 .ap-count-badge { display: inline-flex; align-items: center; justify-content: center; padding: 1px 7px; font-family: var(--f-ui); font-size: 10px; font-weight: 700; background: var(--gold-3); border: 1px solid var(--gold-4); color: var(--gold); border-radius: 3px; margin-left: 7px; vertical-align: middle; }
 .ap-count-badge-green { background: var(--green-3); border-color: var(--green-4); color: var(--green); }
-.ap-stat-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(148px,1fr)); gap: 9px; margin: 16px 0 0; }
-.ap-stat { padding: 18px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: var(--shadow-xs); }
-.ap-stat-gold  { border-top: 3px solid var(--gold); }
-.ap-stat-green { border-top: 3px solid var(--green); }
-.ap-stat-num { font-family: var(--f-display); font-size: 36px; line-height: 1; color: var(--ink); margin-bottom: 4px; }
-.ap-stat-label { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-4); }
 .ap-request-list, .ap-records-list { display: flex; flex-direction: column; gap: 7px; margin-top: 12px; }
 .ap-request-item, .ap-record-item { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-sm); box-shadow: var(--shadow-xs); transition: border-color 0.16s; }
 .ap-request-item:hover, .ap-record-item:hover { border-color: var(--border-2); }
@@ -841,7 +769,6 @@ img { max-width: 100%; display: block; }
 .ap-table tr:last-child td { border-bottom: none; }
 .ap-table tr:hover td { background: var(--surface-2); }
 .ap-badge { display: inline-flex; align-items: center; padding: 2px 8px; font-family: var(--f-ui); font-size: 9.5px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; white-space: nowrap; border-radius: 3px; transition: all 0.16s; }
-.ap-badge-submitted { background: var(--gold-3); border: 1px solid var(--gold-4); color: var(--gold); }
 .ap-badge-active    { background: var(--green-3); border: 1px solid var(--green-4); color: var(--green); }
 .ap-badge-inactive  { background: var(--surface-2); border: 1px solid var(--border); color: var(--ink-4); }
 .ap-badge-review    { background: var(--danger-3); border: 1px solid var(--danger-4); color: var(--danger); }
@@ -851,9 +778,7 @@ img { max-width: 100%; display: block; }
 .ap-btn-approve { border-color: var(--green-4); color: var(--green); background: var(--green-3); }
 .ap-btn-approve:hover { background: var(--green); color: #fff; border-color: var(--green); }
 .ap-btn-inactive { color: var(--ink-4); }
-.ap-btn-review { border-color: var(--danger-4); color: var(--danger); background: var(--danger-3); }
 .ap-btn-ghost { border-style: dashed; }
-.admin-badge { display: none; }
 .ap-editor-wrap { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--green); border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: 24px 24px 28px; margin-top: 14px; animation: apSlideIn 0.2s var(--ease); }
 @keyframes apSlideIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 .ap-editor-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
@@ -878,9 +803,6 @@ img { max-width: 100%; display: block; }
 .ap-toggle-away.ap-toggle-active { background: var(--gold); color: #fff; border-color: var(--gold); }
 .ap-editor-actions { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
 .ap-editor-saved { font-family: var(--f-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--green); margin-top: 9px; }
-.ap-access-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px 22px; margin-top: 14px; max-width: 580px; box-shadow: var(--shadow-xs); }
-.ap-access-row { display: flex; gap: 14px; margin-bottom: 14px; }
-.ap-access-row:last-child { margin-bottom: 0; }
 
 /* ── Mockup feature ──────────────────────────────────── */
 .mockup-feature { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin: 0 0 8px; box-shadow: var(--shadow-sm); }
@@ -897,7 +819,6 @@ img { max-width: 100%; display: block; }
 .ld-close { cursor: pointer; color: var(--ink-4); font-size: 14px; transition: color 0.14s; }
 .ld-close:hover { color: var(--ink); }
 #ldEntries { flex: 1; overflow-y: auto; padding: 8px; }
-.ld-entry { padding: 9px 11px; border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--ink-3); }
 .ld-item { padding: 8px 10px; border-bottom: 1px solid var(--border); }
 .ld-ts { font-size: 12px; color: var(--ink-2); font-weight: 500; }
 .ld-ip { font-size: 11px; color: var(--ink-4); margin-top: 2px; }
@@ -908,7 +829,6 @@ img { max-width: 100%; display: block; }
 .foot-mark { font-family: var(--f-display); font-size: 16px; letter-spacing: 0.08em; color: var(--ink-4); }
 .foot-meta { font-family: var(--f-ui); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); line-height: 1.7; text-align: right; }
 
-/* ── Conf ribbon ─────────────────────────────────────── */
 .conf-ribbon {
   background: linear-gradient(90deg, rgba(24,165,88,0.10) 0%, rgba(24,165,88,0.04) 100%);
   border-bottom: 1px solid rgba(24,165,88,0.18);
@@ -953,14 +873,17 @@ img { max-width: 100%; display: block; }
   .mobile-menu-btn { display: flex !important; }
   .panel { padding: 28px 20px 60px; }
   .ph-title { font-size: 40px; }
-  .ap-editor-grid { grid-template-columns: 1fr; gap: 18px; }
+  .ap-editor-grid { grid-template-columns: 1fr; }
   .sub-form-row { grid-template-columns: 1fr; }
+  .ph-action-banner { flex-direction: column; align-items: flex-start; }
 }
 @media(max-width:540px) {
   .mockup-feature { grid-template-columns: 1fr; }
-  .ph-nav-grid { grid-template-columns: 1fr; }
+  .ph-dash-grid { grid-template-columns: 1fr; }
+  .ph-feature-grid { grid-template-columns: 1fr; }
   .ph-quick-grid { grid-template-columns: 1fr 1fr; }
   .cg { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1038,7 +961,6 @@ img { max-width: 100%; display: block; }
   font-family: inherit;
 }
 .cm-refresh-btn:hover { background: #18a558; color: #fff; }
-.cm-refresh-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .cm-stats {
   display: grid; grid-template-columns: repeat(4,1fr);
@@ -1080,7 +1002,6 @@ img { max-width: 100%; display: block; }
 .cm-role { font-size: 11.5px; color: #718070; margin-top: 1px; }
 .cm-head-right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 
-/* Status badges */
 .cm-badge {
   display: inline-flex; align-items: center; padding: 2px 8px;
   font-size: 10px; font-weight: 700; letter-spacing: 0.09em;
@@ -1143,11 +1064,8 @@ img { max-width: 100%; display: block; }
 .cm-btn-approve:hover  { background: #18a558; color: #fff; border-color: #18a558; }
 .cm-btn-save     { background: rgba(37,99,168,0.08); border-color: rgba(37,99,168,0.22); color: #1e5fa0; }
 .cm-btn-save:hover     { background: #2563a8; color: #fff; border-color: #2563a8; }
-.cm-btn-deactivate { background: rgba(107,124,130,0.08); border-color: rgba(107,124,130,0.22); color: #4a6070; }
-.cm-btn-deactivate:hover { background: #4a6070; color: #fff; border-color: #4a6070; }
 .cm-btn-remove   { background: rgba(197,48,48,0.07); border-color: rgba(197,48,48,0.20); color: #9b2020; }
 .cm-btn-remove:hover   { background: #c53030; color: #fff; border-color: #c53030; }
-.cm-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .cm-empty { padding: 32px 16px; text-align: center; color: #718070; font-size: 13px; }
 .cm-loading { padding: 28px; text-align: center; color: #a0b0a0; font-size: 12px; }
@@ -1169,8 +1087,6 @@ img { max-width: 100%; display: block; }
 .cm-toast.success { background: #18a558; }
 .cm-toast.error   { background: #c53030; }
 
-.pg-channel-label { font-family: var(--f-ui); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #18a558; margin-top: 12px; margin-bottom: 3px; }
-.pg-channel-body { font-size: 13px; color: var(--ink-2); }
 </style>
 </head>
 <body>
@@ -1225,7 +1141,7 @@ img { max-width: 100%; display: block; }
         <div class="nav-item" data-panel="p10">Working On Now</div>
         <div class="nav-item" data-panel="p3">Phone System</div>
         <div class="nav-item" data-panel="p4">Lumé OS</div>
-        <div class="nav-item" data-panel="pGaia">Gaia</div>
+        <div class="nav-item" data-panel="pGAIA">Gaia</div>
         <div class="nav-item" data-panel="p5">Nyro Power</div>
         <div class="nav-item" data-panel="p6">Radio and Comms</div>
         <div class="nav-item" data-panel="p7">System Design</div>
@@ -1248,23 +1164,23 @@ img { max-width: 100%; display: block; }
 
     <div class="panel active" id="p0home">
 
+      <!-- Action Banner -->
+      <div class="ph-action-banner">
+        <div>
+          <div class="ph-action-banner-eyebrow">Active Contributor Work</div>
+          <div class="ph-action-banner-title">Wondering where to jump in?</div>
+          <div class="ph-action-banner-text">See the current priorities, choose a task that fits your time and interests, and connect with the right project channel.</div>
+          <div class="ph-action-banner-sub">Start small. One useful task, question, suggestion, or research note can move the work forward.</div>
+        </div>
+        <button class="ph-action-btn" data-dest="p10">See What We Need Help With</button>
+      </div>
+
       <div class="ph-hero">
         <div class="ph-hero-inner">
           <div class="ph-eyebrow">Internal Resource</div>
           <h1 class="ph-title">Welcome to the<br>Contributor Hub</h1>
           <p class="ph-subtitle">Your central resource for team updates, mission context, product knowledge, and contributor tools. Everything you need to show up and contribute well.</p>
         </div>
-      </div>
-
-      <!-- Dashboard Contributor Action Banner -->
-      <div class="ph-action-banner">
-        <div class="ph-action-banner-eyebrow">ACTIVE CONTRIBUTOR WORK</div>
-        <div class="ph-action-banner-heading">Wondering where to jump in?</div>
-        <div class="ph-action-banner-copy">See the current priorities, choose a task that fits your time and interests, and connect with the right project channel.</div>
-        <div class="ph-action-banner-btn-wrap">
-          <button class="ph-action-banner-btn" data-dest="p10">See What We Need Help With</button>
-        </div>
-        <div class="ph-action-banner-note">Start small. One useful task, question, suggestion, or research note can move the work forward.</div>
       </div>
 
       <div class="ph-layout">
@@ -1340,7 +1256,7 @@ img { max-width: 100%; display: block; }
               <div class="ph-app-tile" data-dest="p3"><div class="ph-app-tile-icon apt-green">P</div><div class="ph-app-tile-label">Phone</div></div>
               <div class="ph-app-tile" data-dest="p4"><div class="ph-app-tile-icon apt-slate">OS</div><div class="ph-app-tile-label">Lumé OS</div></div>
               <div class="ph-app-tile" data-dest="p5"><div class="ph-app-tile-icon apt-amber">NY</div><div class="ph-app-tile-label">Nyro</div></div>
-              <div class="ph-app-tile" data-dest="pGaia"><div class="ph-app-tile-icon apt-violet">GA</div><div class="ph-app-tile-label">Gaia</div></div>
+              <div class="ph-app-tile" data-dest="pGAIA"><div class="ph-app-tile-icon apt-violet">GA</div><div class="ph-app-tile-label">Gaia</div></div>
               <div class="ph-app-tile" data-dest="p6"><div class="ph-app-tile-icon apt-blue">RC</div><div class="ph-app-tile-label">Radio</div></div>
               <div class="ph-app-tile" data-dest="p8"><div class="ph-app-tile-icon apt-rose">SU</div><div class="ph-app-tile-label">Sustain</div></div>
             </div>
@@ -1367,25 +1283,19 @@ img { max-width: 100%; display: block; }
       <div style="height:40px"></div>
     </div><!-- /p0home -->
 
-<div class="panel" id="pDH">
-
+    <div class="panel" id="pDH">
       <div class="s-heading">Discord HQ</div>
       <div class="s-intro">Discord is our primary communication platform and the heartbeat of the Cioré contributor community. This guide will help you set up your profile properly, navigate the server with confidence, and understand how we communicate as a team. Whether you are brand new or just looking to get your settings right, start here.</div>
 
-      <!-- ─── A. DISPLAY NAME SETUP ─── -->
       <div class="cat-label">Display Name Setup</div>
-
       <p class="bt">Your display name in the Cioré HQ server should follow this format so the team knows who you are and how to support you:</p>
-
       <div class="pull" style="margin-top:20px">
         <strong>First Name - Role</strong><br>
-        Example: <strong>Jordan - UX Designer Contributor</strong>
+        Example: <strong>Jordan - UX Designer</strong>
       </div>
-
       <p class="bt">This helps every contributor and the founder instantly recognize who they are talking to and what kind of work you do. It also helps project managers reach the right people quickly.</p>
 
       <div class="cat-label" style="margin-top:36px">How to Update Your Display Name</div>
-
       <p class="bt">If you already have a Discord account, use the <strong>per-server profile</strong> feature so your changes only apply to Cioré HQ and do not affect your other servers.</p>
 
       <div class="phases" style="margin-top:20px">
@@ -1414,44 +1324,39 @@ img { max-width: 100%; display: block; }
           <div class="ph-num">Step 04</div>
           <div>
             <div class="ph-title">Update Your Display Name</div>
-            <div class="ph-body">Set your display name to match the format: <strong>First Name - [Role] Contributor</strong>. Save your changes.</div>
+            <div class="ph-body">Set your display name to match the format: <strong>First Name - [Role] Contributor</strong> or <strong>First Name - Role</strong>. Save your changes.</div>
           </div>
         </div>
       </div>
 
-      <!-- ─── B. PROFILE DETAILS ─── -->
       <div class="cat-label">Profile Details</div>
-
       <p class="bt">Please take a few minutes to make sure your server profile is set up completely. A complete profile helps the team communicate with you respectfully and efficiently.</p>
 
       <div class="cg" style="margin-top:20px">
         <div class="cc">
           <div class="cc-eye">Name</div>
           <div class="cc-title">Display Name</div>
-          <div class="cc-body">Follow the First Name - [Role] Contributor format described above. This is the most important profile field to get right.</div>
+          <div class="cc-body">Follow the First Name - Role format described above. This is the most important profile field to get right.</div>
         </div>
         <div class="cc">
           <div class="cc-eye">Reach</div>
           <div class="cc-title">DM Preference</div>
-          <div class="cc-body">Set your direct message preference so others know the best way to contact you. See the DM Preferences section below for the options.</div>
+          <div class="cc-body">Set your direct message preference so others know the best way to contact you.</div>
         </div>
         <div class="cc">
           <div class="cc-eye">Time</div>
           <div class="cc-title">Time Zone</div>
-          <div class="cc-body">Add your time zone so the team understands your availability and can schedule accordingly. Use the shorthand from the time zone guide below.</div>
+          <div class="cc-body">Add your time zone so the team understands your availability and can schedule accordingly.</div>
         </div>
         <div class="cc">
           <div class="cc-eye green">Identity</div>
           <div class="cc-title">Pronouns</div>
-          <div class="cc-body">Add your pronouns to your profile so the team knows how to address you respectfully. See the Pronouns section below for available options.</div>
+          <div class="cc-body">Add your pronouns to your profile so the team knows how to address you respectfully.</div>
         </div>
       </div>
 
-      <!-- ─── C. TIME ZONE GUIDE ─── -->
       <div class="cat-label">Time Zone Guide</div>
-
-      <p class="bt">Use the guide below to choose the correct shorthand for your time zone. Meetings are generally scheduled in <strong>Central Time (CT)</strong> because that is the founder's home time zone. Use a time zone converter to find the equivalent time in your location.</p>
-
+      <p class="bt">Meetings are generally scheduled in <strong>Central Time (CT)</strong> because that is the founder's home time zone.</p>
       <table class="st" style="margin-top:20px">
         <thead>
           <tr><th>Shorthand</th><th>Full Name</th></tr>
@@ -1464,115 +1369,10 @@ img { max-width: 100%; display: block; }
           <tr><td>WAT</td><td>West Africa Time</td></tr>
           <tr><td>CST</td><td>China Standard Time</td></tr>
           <tr><td>GMT</td><td>Greenwich Mean Time</td></tr>
-          <tr><td>ADT / AST</td><td>Atlantic Daylight / Standard Time</td></tr>
-          <tr><td>AKST</td><td>Alaska Standard Time</td></tr>
-          <tr><td>HST</td><td>Hawaii–Aleutian Standard Time</td></tr>
-          <tr><td>DAVT</td><td>Davis Time</td></tr>
-          <tr><td>NDT / NST / NT</td><td>Newfoundland Time</td></tr>
-          <tr><td>BST</td><td>British Summer Time</td></tr>
         </tbody>
       </table>
 
-      <div class="pull">
-        Meetings will generally be scheduled in <strong>Central Time</strong> unless otherwise noted. Use a time zone translator or converter, such as WorldTimeBuddy or timeanddate.com, to confirm the correct time for your location before any scheduled call.
-      </div>
-
-      <!-- ─── D. DM PREFERENCES ─── -->
-      <div class="cat-label">Direct Message Preferences</div>
-
-      <p class="bt">Your DM preference tells other contributors how to reach you. Please choose the option that fits your comfort level and make sure it is reflected in your server profile.</p>
-
-      <div class="cg" style="margin-top:20px">
-        <div class="cc" style="border-top:3px solid var(--green)">
-          <div class="cc-eye green">Open</div>
-          <div class="cc-title">DMs Open</div>
-          <div class="cc-body">Anyone in the Cioré HQ community can message you directly without asking first. This is the most accessible option for collaboration.</div>
-        </div>
-        <div class="cc" style="border-top:3px solid var(--gold-light)">
-          <div class="cc-eye">Closed</div>
-          <div class="cc-title">DMs Closed</div>
-          <div class="cc-body">You prefer not to receive direct messages. Contributors who need to reach you should do so in a shared channel or through a team lead.</div>
-        </div>
-        <div class="cc" style="border-top:3px solid var(--gold-light)">
-          <div class="cc-eye">Ask First</div>
-          <div class="cc-title">Ask to DM</div>
-          <div class="cc-body">You are open to direct messages, but prefer that someone check in with you first before sending a DM. A quick ask in a shared channel works great.</div>
-        </div>
-      </div>
-
-      <p class="bt" style="margin-top:8px">There is no wrong choice. Choose whatever feels most comfortable for you and your working style.</p>
-
-      <!-- ─── E. PRONOUNS ─── -->
-      <div class="cat-label">Pronouns</div>
-
-      <p class="bt">Contributors can add their pronouns to their server profile so the team can address them correctly and respectfully. Please take a moment to add yours.</p>
-
-      <ul class="dl" style="margin-top:16px">
-        <li>she / her</li>
-        <li>she / they</li>
-        <li>they / them</li>
-        <li>he / him</li>
-        <li>he / they</li>
-      </ul>
-
-      <div class="pull">
-        Please check and respect everyone's pronouns. Do not assume. If you make a mistake, simply correct yourself and move forward, no one expects perfection, only effort and care.
-      </div>
-
-      <!-- ─── F. WHAT IS CIORÉ HQ ─── -->
-      <div class="cat-label">What Is Cioré HQ?</div>
-
-      <p class="bt">Cioré HQ is the name of our Discord server. Think of it as our virtual headquarters, the place where contributor activity lives, conversations happen, and the team stays connected. Just as the Contributor Hub is where you go to read and learn, Cioré HQ on Discord is where you go to communicate and collaborate.</p>
-
-      <!-- ─── G. SERVER / CATEGORY / CHANNEL ─── -->
-      <div class="cat-label">Server, Categories, and Channels</div>
-
-      <p class="bt">If Discord is new to you, here is a quick breakdown of how it is organized:</p>
-
-      <div class="cg" style="margin-top:20px">
-        <div class="cc">
-          <div class="cc-eye">Level 1</div>
-          <div class="cc-title">Server</div>
-          <div class="cc-body">The overall private space for the organization, like an online office building. Cioré HQ is our server. You need an invitation to join.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Level 2</div>
-          <div class="cc-title">Category</div>
-          <div class="cc-body">A grouped section of related channels, like a floor or department in a building. Categories help keep conversations organized by topic or team.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Level 3</div>
-          <div class="cc-title">Channel</div>
-          <div class="cc-body">An individual room for a specific purpose, announcements, project discussion, ideas, meetings, or general conversation. Each channel has a stated purpose.</div>
-        </div>
-      </div>
-
-      <ul class="dl" style="margin-top:4px">
-        <li>Some channels are <strong>announcement-only</strong>, you can read but not post.</li>
-        <li>Some channels are <strong>project-specific</strong>, focused on active initiatives.</li>
-        <li>Some channels are <strong>role-gated</strong>, only visible or accessible based on your contributor role.</li>
-      </ul>
-
-      <!-- ─── H. HOW TO NAVIGATE ─── -->
-      <div class="cat-label">How to Navigate</div>
-
-      <ul class="dl" style="margin-top:4px">
-        <li>Use the <strong>left sidebar</strong> in Discord to move between categories and channels.</li>
-        <li>You can <strong>collapse and expand</strong> categories by clicking the category name.</li>
-        <li>When looking for a specific channel, check the server map or channel guide if one is available.</li>
-        <li>To stay updated, always check <strong>announcement channels first</strong>, that is where important notices live.</li>
-      </ul>
-
-      <!-- ─── I. WHERE TO START ─── -->
-      <div class="cat-label">Where to Start</div>
-
-      <p class="bt">When you first join, head to the <strong>Welcome</strong> or <strong>Announcements</strong> channel. That is where important updates, reminders, and notices are posted. Start there, read through what is available, and then explore the rest of the server at your own pace.</p>
-
-      <!-- ─── J. IMPORTANT CHANNELS ─── -->
       <div class="cat-label">Important Channels to Know</div>
-
-      <p class="bt">Every channel has a purpose. Here are the ones you should know about right away:</p>
-
       <table class="st" style="margin-top:20px">
         <thead>
           <tr><th>Channel</th><th>Purpose</th></tr>
@@ -1581,32 +1381,13 @@ img { max-width: 100%; display: block; }
           <tr><td>Announcements</td><td>Important updates, reminders, and news from the founder and team leads. Read this regularly.</td></tr>
           <tr><td>Upcoming Meetings</td><td>Meeting details, links, and scheduling information. Check here before any session.</td></tr>
           <tr><td>Meeting Recordings</td><td>Recordings of past meetings for contributors who missed them or want to review.</td></tr>
-          <tr><td>Conflict Resolution</td><td>A space where contributors can find guidance and support if an issue needs to be addressed. This is a safe and respectful channel.</td></tr>
-          <tr><td>Server Map / Channel Guide</td><td>A reference for where things live in the server. If you are not sure where a conversation belongs, check here first.</td></tr>
+          <tr><td>Conflict Resolution</td><td>A space where contributors can find guidance and support if an issue needs to be addressed.</td></tr>
         </tbody>
       </table>
 
-      <!-- ─── K. COMMUNICATION EXPECTATIONS ─── -->
-      <div class="cat-label">Communication Expectations</div>
-
-      <p class="bt">We are a distributed, globally connected team. That means communication across time zones, backgrounds, and schedules. Please keep these expectations in mind as you participate in Cioré HQ:</p>
-
-      <ul class="dl" style="margin-top:16px">
-        <li>Before messaging someone, take a moment to check their <strong>role, pronouns, DM preference, and time zone</strong> in their server profile.</li>
-        <li>Please be <strong>respectful of how people identify</strong> and communicate. Use correct names and pronouns.</li>
-        <li>Be <strong>considerate of different time zones</strong> and response windows. Not everyone is available at the same hours.</li>
-        <li>Meetings are scheduled in <strong>Central Time</strong> unless otherwise noted. Use a time zone translator to confirm your local time.</li>
-        <li>Use channels for <strong>their intended purpose</strong> whenever possible. If you are unsure where something belongs, ask in a general channel or check the server map.</li>
-        <li>When in doubt, <strong>default to respect</strong>. This community is built on care, intentionality, and mutual support.</li>
-      </ul>
-
-      <div class="pull">
-        If you are ever unsure about something, message the founder directly on Discord. We would rather you ask than feel lost. Welcome to Cioré HQ.
-      </div>
-
       <div style="height:60px"></div>
-
     </div><!-- /pDH -->
+
     <div class="panel" id="p0">
       <h1 class="s-heading">Start Here</h1>
       <p class="s-intro">Welcome to Cioré. We are genuinely glad you are here and grateful that you are choosing to contribute your time, ideas, skills, and energy to this mission. This is a collaborative, intentional environment where contributors work together to build technology that is privacy-first, sustainable, and community-centered.</p>
@@ -1626,7 +1407,7 @@ img { max-width: 100%; display: block; }
 
       <div class="cat-label" id="p0-welcome">Welcome to the Team</div>
       <p class="bt">You have made it. Whether you are an engineer, designer, strategist, writer, researcher, or organizer, you are now part of a team building something that has never existed before. We are creating privacy-first, ethically made, sustainable technology powered by a community that believes technology should serve people, not harvest them.</p>
-      <p class="bt" style="margin-top:12px">Your presence here matters. No contribution is too small. After reviewing this page, visit <button style="background:none;border:none;padding:0;color:var(--green);font-family:inherit;font-size:inherit;font-weight:600;cursor:pointer;text-decoration:underline;" onclick="window.navigateTo('p10')">What We Are Working On Now</button> to see the current focus areas, where support is welcome, and how to take your first step.</p>
+      <p class="bt" style="margin-top:12px">Your presence here matters. No contribution is too small. After reviewing this page, visit <button class="ph-see-all" data-dest="p10" style="display:inline;font-size:inherit;font-weight:700;text-decoration:underline;">What We Are Working On Now</button> to see the current focus areas, where support is welcome, and how to take your first step.</p>
 
       <div class="cat-label" id="p0-culture">Team Culture</div>
       <div class="cg">
@@ -1637,18 +1418,15 @@ img { max-width: 100%; display: block; }
       </div>
 
       <div class="cat-label" id="p0-journey">Your Onboarding Journey</div>
-      <p class="bt" style="margin-bottom:16px">Here is the updated path from interest to active contributor:</p>
+      <p class="bt" style="margin-bottom:16px">Here is the clear onboarding process from agreement to active work:</p>
       <div class="phases">
-        <div class="ph-row"><div class="ph-num">01</div><div><div class="ph-title">Sign and Confirm Agreement</div><div class="ph-body">Review, sign, and confirm the contributor agreement.</div></div></div>
-        <div class="ph-row"><div class="ph-num">02</div><div><div class="ph-title">Email Reply Confirmation</div><div class="ph-body">Reply to the onboarding email with the requested emoji after completing the agreement.</div></div></div>
-        <div class="ph-row"><div class="ph-num">03</div><div><div class="ph-title">Request &amp; Confirm Hub Access</div><div class="ph-body">Request and confirm your Contributor Hub access code.</div></div></div>
-        <div class="ph-row"><div class="ph-num">04</div><div><div class="ph-title">Join Cioré HQ on Discord</div><div class="ph-body">Accept the server invite and enter Cioré HQ on Discord.</div></div></div>
-        <div class="ph-row"><div class="ph-num">05</div><div><div class="ph-title">Set Per-Server Profile</div><div class="ph-body">Configure your Cioré HQ server profile specifically.</div></div></div>
-        <div class="ph-row"><div class="ph-num">06</div><div><div class="ph-title">Display Name Formatting</div><div class="ph-body">Use this exact display name format: <strong>First Name - [Role] Contributor</strong>.</div></div></div>
-        <div class="ph-row"><div class="ph-num">07</div><div><div class="ph-title">Add Profile Details</div><div class="ph-body">Add your time zone, DM preference, and pronouns if comfortable.</div></div></div>
-        <div class="ph-row"><div class="ph-num">08</div><div><div class="ph-title">Post Introduction</div><div class="ph-body">Post your introduction in the #welcome channel using our simple introduction template.</div></div></div>
-        <div class="ph-row"><div class="ph-num">09</div><div><div class="ph-title">Explore Active Work</div><div class="ph-body">Visit Working On Now and choose one focus area to explore.</div></div></div>
-        <div class="ph-row"><div class="ph-num">10</div><div><div class="ph-title">Communicate &amp; Connect</div><div class="ph-body">Ask questions early and communicate openly if your bandwidth or availability changes.</div></div></div>
+        <div class="ph-row"><div class="ph-num">01</div><div><div class="ph-title">Sign and Confirm Contributor Agreement</div><div class="ph-body">Review, sign, and upload your completed contributor agreement.</div></div></div>
+        <div class="ph-row"><div class="ph-num">02</div><div><div class="ph-title">Reply to Email</div><div class="ph-body">Reply to your onboarding email with the requested emoji to confirm completion.</div></div></div>
+        <div class="ph-row"><div class="ph-num">03</div><div><div class="ph-title">Request and Confirm Hub Access</div><div class="ph-body">Submit your access request and receive your personal code.</div></div></div>
+        <div class="ph-row"><div class="ph-num">04</div><div><div class="ph-title">Join Cioré HQ on Discord</div><div class="ph-body">Use your invite link to join our central Discord server.</div></div></div>
+        <div class="ph-row"><div class="ph-num">05</div><div><div class="ph-title">Set Per-Server Profile</div><div class="ph-body">Set your nickname format to <code>First Name - [Role] Contributor</code>. Add time zone, DM preferences, and pronouns if comfortable.</div></div></div>
+        <div class="ph-row"><div class="ph-num">06</div><div><div class="ph-title">Post Introduction in Welcome</div><div class="ph-body">Say hello in the #welcome channel using the template below.</div></div></div>
+        <div class="ph-row"><div class="ph-num">07</div><div><div class="ph-title">Visit Working On Now &amp; Ask Questions Early</div><div class="ph-body">Explore active work areas, pick a starting task, and communicate availability changes early.</div></div></div>
       </div>
 
       <div class="cat-label" id="p0-next">What To Do Next</div>
@@ -1656,858 +1434,354 @@ img { max-width: 100%; display: block; }
         <div class="cc"><div class="cc-eye green">Step 1</div><div class="cc-title">Read Mission and Values</div><div class="cc-body">Understand why Cioré exists and what we are committed to. This is the foundation everything else builds on.</div></div>
         <div class="cc"><div class="cc-eye green">Step 2</div><div class="cc-title">Set Up Discord</div><div class="cc-body">Follow the Discord HQ guide to set your display name, explore the server, and introduce yourself in the right channel.</div></div>
         <div class="cc"><div class="cc-eye green">Step 3</div><div class="cc-title">Review What We Are Working On</div><div class="cc-body">See the current phase, active priorities, and areas where support is welcome. Find what aligns with your skills and interests.</div></div>
-        <div class="cc"><div class="cc-eye green">Step 4</div><div class="cc-title">Choose Where To Contribute</div><div class="cc-body">Pick an area that fits. If there is a project contact listed, reach out to them. If there is no project contact listed, reach out to the founder with the project you are interested in.</div></div>
+        <div class="cc"><div class="cc-eye green">Step 4</div><div class="cc-title">Choose Where To Contribute</div><div class="cc-body">Pick an area that fits. Reach out in the corresponding Discord project channel to jump in.</div></div>
       </div>
 
       <div class="cat-label" id="p0-intro">Introduction Template</div>
-      <p class="bt" style="margin-bottom:12px">Use this format when introducing yourself in the Discord welcome channel.</p>
       <div class="pull">
         <strong>Name:</strong> Your name or preferred name<br>
-        <strong>Role:</strong> First Name - [Role] Contributor<br>
+        <strong>Role:</strong> What you are here to do or contribute<br>
         <strong>Background:</strong> A brief line about your experience or what you bring<br>
         <strong>Excited about:</strong> What drew you to Cioré or what you are most looking forward to<br>
         <strong>One fun fact:</strong> Optional, but encouraged
       </div>
 
       <div class="cat-label" id="p0-comms">Project Communication</div>
-      <p class="bt">All project communication happens through Discord. If you are working on a specific area, coordinate with the project contact listed for that workstream. If no contact is listed, reach out to the founder. Keep conversations in the relevant project channels so everything stays organized and visible to the team.</p>
+      <p class="bt">All project communication happens through Discord. Coordinate with the project contact listed or ask in the relevant channel.</p>
 
       <div class="cat-label" id="p0-expectations">Contributor Expectations</div>
       <ul class="dl">
         <li>Show up with honesty and care. Quality matters more than speed.</li>
-        <li>Communicate early if something comes up. We would rather know you are unavailable than wonder why things stalled.</li>
-        <li>Ask questions freely. No question is too basic. We want you to understand the work.</li>
-        <li>Give credit to others. Recognize contributions openly and generously.</li>
-        <li>Bring your real self. We are not building a corporate machine. We are building something human.</li>
+        <li>Communicate early if something comes up or availability changes.</li>
+        <li>Ask questions freely. No question is too basic.</li>
+        <li>Give credit to others and recognize contributions openly.</li>
       </ul>
 
       <div class="cat-label" id="p0-confidentiality">Confidentiality and Respect</div>
-      <p class="bt">What happens inside this hub stays here. Do not share contributor information, internal documents, design files, product details, or anything marked internal outside the team without explicit permission from the founder. Treat your fellow contributors with respect. Harassment, discrimination, and bad-faith behavior are not tolerated in any form.</p>
+      <p class="bt">What happens inside this hub stays here. Do not share contributor information, internal documents, design files, or product details outside the team without explicit permission from the founder.</p>
 
-      <div class="cat-label" id="p0-discord">Discord Activity</div>
-      <p class="bt">Discord is the primary way the team stays connected. Check in regularly, respond to messages when you can, and participate in conversations relevant to your work. If you go quiet for an extended period, let the team know in advance. Staying engaged, even lightly, helps everyone know you are still part of the team.</p>
-
-      <div class="cat-label" id="p0-help">Need Help</div>
-      <div class="wb"><div class="wb-icon">&#9432;</div><div>If you need support, have a question, or something is unclear, post in the relevant Discord channel or reach out to the founder directly. You are never expected to figure things out alone. We are here to support each other.</div></div>
-
-      <!-- Single Onboarding Guide Callout -->
-      <div class="ph-action-banner" style="margin-top:36px;margin-bottom:12px;">
-        <div class="ph-action-banner-eyebrow">RESOURCES</div>
-        <div class="ph-action-banner-heading">Need a Refresher?</div>
-        <div class="ph-action-banner-copy">If you have not reviewed the full Contributor Onboarding Guide yet, use it anytime for help setting up your tools, navigating Discord, finding active work, and understanding how we work together.</div>
-        <div class="ph-action-banner-btn-wrap">
-          <a class="ph-action-banner-btn" href="https://docs.google.com/presentation/d/1OfXvmQTkiZlZ2ulEhyTrZxQujPr0mkijz5PxlmooL2c/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open the Cioré Contributor Onboarding Guide in a new tab">Open Contributor Onboarding Guide</a>
-        </div>
+      <!-- Onboarding Guide Callout -->
+      <div style="margin-top:36px;padding:24px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--green);border-radius:var(--r-md);box-shadow:var(--shadow-sm);">
+        <strong style="font-family:var(--f-ui);font-size:16px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink);display:block;margin-bottom:8px;">Need a Refresher?</strong>
+        <p class="bt" style="margin-bottom:16px;font-size:14px;color:var(--ink-2);">If you have not reviewed the full Contributor Onboarding Guide yet, use it anytime for help setting up your tools, navigating Discord, finding active work, and understanding how we work together.</p>
+        <a href="https://docs.google.com/presentation/d/1OfXvmQTkiZlZ2ulEhyTrZxQujPr0mkijz5PxlmooL2c/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open the Cioré Contributor Onboarding Guide in a new tab" class="ph-action-btn" style="display:inline-block;text-decoration:none;">Open Contributor Onboarding Guide</a>
       </div>
 
+      <div class="cat-label" id="p0-help">Need Help</div>
+      <div class="wb"><div class="wb-icon">&#9432;</div><div>If you need support, have a question, or something is unclear, post in the relevant Discord channel or reach out to the founder directly.</div></div>
     </div><!-- /p0 -->
 
     <div class="panel" id="pCOC">
       <h1 class="s-heading">Code of Conduct</h1>
       <p class="s-intro">By accepting your contributor access and participating in any Cioré workstream, you are agreeing to uphold everything in this document. You do not need to sign a separate form. Your participation is your agreement.</p>
-
-      <div class="wb"><div class="wb-icon">&#9432;</div><div>This Code of Conduct applies to all contributors in all spaces connected to Cioré, including Discord, the Contributor Hub, calls, emails, and any public or private communication done in connection with your role here.</div></div>
-
+      <div class="wb"><div class="wb-icon">&#9432;</div><div>This Code of Conduct applies to all contributors in all spaces connected to Cioré, including Discord, the Contributor Hub, calls, emails, and any public or private communication.</div></div>
       <div class="cat-label">1. Why This Exists</div>
-      <p class="bt">Cioré is a community-driven startup built on trust, transparency, and a shared belief that technology should serve people. This code exists to protect that environment. It sets clear expectations so every contributor knows how to show up, what is expected, and what this community will and will not tolerate. We are building something meaningful together. This is how we make sure the process reflects the product.</p>
-
+      <p class="bt">Cioré is a community-driven startup built on trust, transparency, and a shared belief that technology should serve people. This code exists to protect that environment.</p>
       <div class="cat-label">2. Core Values</div>
       <div class="cg">
-        <div class="cc"><div class="cc-eye green">Respect</div><div class="cc-title">Treat Everyone Well</div><div class="cc-body">Treat every contributor with kindness, empathy, and fairness. This applies in Discord, in documents, in meetings, and in every written message.</div></div>
-        <div class="cc"><div class="cc-eye green">Professionalism</div><div class="cc-title">Follow Through</div><div class="cc-body">Communicate clearly. Follow through on what you commit to. If something comes up, say so early rather than going quiet.</div></div>
-        <div class="cc"><div class="cc-eye green">Integrity</div><div class="cc-title">Be Honest</div><div class="cc-body">Be honest about your work, your capacity, and any concerns you have. If you see something that does not feel right, bring it to the founder.</div></div>
-        <div class="cc"><div class="cc-eye green">Inclusivity</div><div class="cc-title">Everyone Belongs</div><div class="cc-body">Cioré is built for and by people from all backgrounds. Differences in experience, identity, and perspective make this team stronger.</div></div>
-        <div class="cc"><div class="cc-eye green">Alignment</div><div class="cc-title">Uphold the Mission</div><div class="cc-body">You are here because you believe in what we are building. Uphold that mission in how you work, what you say publicly, and how you represent this community.</div></div>
+        <div class="cc"><div class="cc-eye green">Respect</div><div class="cc-title">Treat Everyone Well</div><div class="cc-body">Treat every contributor with kindness, empathy, and fairness across all channels and communications.</div></div>
+        <div class="cc"><div class="cc-eye green">Professionalism</div><div class="cc-title">Follow Through</div><div class="cc-body">Communicate clearly. Follow through on what you commit to.</div></div>
+        <div class="cc"><div class="cc-eye green">Integrity</div><div class="cc-title">Be Honest</div><div class="cc-body">Be honest about your work, capacity, and concerns.</div></div>
+        <div class="cc"><div class="cc-eye green">Inclusivity</div><div class="cc-title">Everyone Belongs</div><div class="cc-body">Differences in experience, identity, and perspective make this team stronger.</div></div>
       </div>
-
-      <div class="cat-label">3. How We Work Together</div>
-      <ul class="dl">
-        <li>Be professional in all interactions, whether in Discord, email, documents, or calls.</li>
-        <li>Communicate early if you need more time or run into a challenge. We would rather know than wonder.</li>
-        <li>Use the designated Cioré channels for all project communication. Keep work conversations in the right spaces.</li>
-        <li>Do not use offensive, discriminatory, or harassing language or imagery anywhere connected to Cioré.</li>
-        <li>Be open to feedback. Assume good intent. Encourage honest, constructive conversations.</li>
-        <li>Recognize others. If someone does good work, say so. We are a team.</li>
-        <li>Do not take credit for contributions that are not yours.</li>
-      </ul>
-
-      <div class="cat-label">4. Confidentiality</div>
-      <p class="bt" style="margin-bottom:12px">What happens inside Cioré stays inside Cioré.</p>
-      <ul class="dl">
-        <li>Do not share internal documents, design files, product details, contributor information, or any internal discussions outside of the team without explicit written permission from the founder.</li>
-        <li>This includes anything in this hub, anything shared in Discord, and anything discussed in contributor calls or meetings.</li>
-        <li>Confidentiality does not end when your contributor role does. These obligations remain in effect after you leave.</li>
-        <li>If you are unsure whether something can be shared externally, ask the founder before sharing it.</li>
-      </ul>
-
-      <div class="cat-label">5. Data and Tools</div>
-      <ul class="dl">
-        <li>Use only approved Cioré tools and systems for all work-related communications, file storage, and collaboration.</li>
-        <li>Do not store Cioré materials in personal accounts, unauthorized apps, or anywhere outside of approved systems.</li>
-        <li>Comply with all applicable data privacy standards. If your role involves any contributor or user data, handle it with care.</li>
-      </ul>
-
-      <div class="cat-label">6. Intellectual Property</div>
-      <ul class="dl">
-        <li>Work you create specifically for Cioré as part of your contributor role belongs to Cioré unless otherwise agreed in writing.</li>
-        <li>Your own personal work, created outside of and unrelated to Cioré, remains yours.</li>
-        <li>You may include non-confidential examples of your Cioré contributions in a personal portfolio with prior approval from the founder.</li>
-        <li>Do not use Cioré name, trademarks, logos, or branding without explicit authorization.</li>
-      </ul>
-
-      <div class="cat-label">7. Conflicts of Interest</div>
-      <p class="bt" style="margin-bottom:12px">We ask for transparency, not perfection.</p>
-      <ul class="dl">
-        <li>Disclose any outside relationships, employment, or activities that could reasonably conflict with Cioré interests.</li>
-        <li>Do not use your contributor role to promote unrelated products, services, or organizations.</li>
-        <li>Do not engage in work that directly competes with Cioré during your time as a contributor and for one year after your role ends.</li>
-        <li>Do not solicit other Cioré contributors, employees, or partners away from the organization.</li>
-        <li>If you are ever unsure whether something is a conflict, bring it to the founder. There is no penalty for asking.</li>
-      </ul>
-
-      <div class="cat-label">8. Harassment and Discrimination</div>
-      <p class="bt" style="margin-bottom:12px">Cioré has zero tolerance for harassment, discrimination, or bullying in any form.</p>
-      <p class="bt" style="margin-bottom:12px">This includes unwelcome comments, slurs, jokes, or behavior targeting anyone based on race, gender, sexual orientation, disability, age, religion, national origin, or any other characteristic. It applies in public channels, direct messages, calls, and any space where Cioré contributors interact.</p>
-      <div class="wb"><div class="wb-icon">&#9888;</div><div>If you experience or witness anything that violates this, report it to the founder directly. All reports are treated confidentially and taken seriously. No one will face retaliation for reporting in good faith.</div></div>
-
-      <div class="cat-label">9. Accountability</div>
-      <p class="bt" style="margin-bottom:12px">We are a startup. Things are still being built, processes are still forming, and not everything will be perfect. We ask for your patience and we extend the same to you. What we do expect is that everyone holds themselves to the standards in this document.</p>
-      <ul class="dl">
-        <li>Violations may result in removal from a project or from your contributor role entirely.</li>
-        <li>Serious violations involving data misuse, harassment, or theft of intellectual property may result in legal action.</li>
-        <li>All concerns are reviewed confidentially and handled fairly.</li>
-      </ul>
-
-      <div class="cat-label">10. Your Agreement</div>
-      <div class="pull">By accepting your contributor access and participating as an active contributor to Cioré, you confirm that you have read, understood, and agree to uphold this Code of Conduct. Your participation is your agreement. If anything in this document is unclear, reach out to the founder before proceeding.</div>
-
+      <div class="cat-label">3. Confidentiality</div>
+      <p class="bt">Do not share internal documents, design files, product details, or contributor information outside of the team without explicit written permission from the founder.</p>
+      <div style="height:60px"></div>
     </div><!-- /pCOC -->
 
-<div class="panel" id="p1">
-
+    <div class="panel" id="p1">
       <div class="s-heading">Mission and Values</div>
       <div class="s-intro">Cioré exists to build powerful, privacy-first, ethically made technology that centers innovation, sustainable systems, transparency, and community. Our modular smartphones and Lumé OS are designed from the ground up to protect people, preserve the planet, and put control back into users' hands.</div>
-
-      <p class="bt">Our long-term vision is to become a third major mobile platform alongside iOS and Android, proving that phones can be private, repairable, solar-assisted, and ethically produced without sacrificing modern performance.</p>
-
       <div class="cat-label">Core Values and Ethical Commitments</div>
-
       <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Privacy</div>
-          <div class="cc-title">Privacy First</div>
-          <div class="cc-body">We do not spy, listen, track, or sell data. Our OS and hardware are built outside surveillance based ecosystems, using sandboxing, strict permissions, and no default telemetry.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Ethics</div>
-          <div class="cc-title">Ethical Manufacturing</div>
-          <div class="cc-body">We prioritize safe, respectful, and fair labor, rejecting supply chains tied to child labor, exploitative mining, or unsafe factories.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Planet</div>
-          <div class="cc-title">Sustainability</div>
-          <div class="cc-body">We commit to low-waste, high-impact design, including recyclable batteries, recycled tempered glass, nanocellulose-reinforced composites, and modular parts to reduce e-waste.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">People</div>
-          <div class="cc-title">Community Over Capitalism</div>
-          <div class="cc-body">We serve people first. Cioré™ is powered by contributors, donors, and supporters who want to build a future where tech is ethical and inclusive.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Purpose</div>
-          <div class="cc-title">Legacy Building</div>
-          <div class="cc-body">We are creating jobs, technology, and narratives that will uplift communities for generations.</div>
-        </div>
+        <div class="cc"><div class="cc-eye">Privacy</div><div class="cc-title">Privacy First</div><div class="cc-body">We do not spy, listen, track, or sell data. Our OS and hardware are built outside surveillance ecosystems.</div></div>
+        <div class="cc"><div class="cc-eye">Ethics</div><div class="cc-title">Ethical Manufacturing</div><div class="cc-body">We prioritize safe, respectful, and fair labor across our research and supplier validation.</div></div>
+        <div class="cc"><div class="cc-eye green">Planet</div><div class="cc-title">Sustainability</div><div class="cc-body">Low-waste, high-impact design focusing on recyclable batteries and modular parts.</div></div>
       </div>
-
-      <div class="cat-label">Brand Colors and Theme</div>
-
-      <div class="swatch-row-light">
-        <div class="sw-item"><div class="sw-dot" style="background:#0A0A0A;"></div><span>Obsidian Black, #0A0A0A</span></div>
-        <div class="sw-item"><div class="sw-dot" style="background:#D4AF37;"></div><span>Champagne Gold, #D4AF37</span></div>
-        <div class="sw-item"><div class="sw-dot" style="background:#3B2F2F;"></div><span>Deep Brown, #3B2F2F</span></div>
-        <div class="sw-item"><div class="sw-dot" style="background:#4F7942;"></div><span>Eco Green, #4F7942</span></div>
-      </div>
-
+      <div style="height:60px"></div>
     </div><!-- /p1 -->
-<div class="panel" id="p3">
 
+    <div class="panel" id="p3">
       <div class="s-heading">Phone System Overview</div>
-      <div class="s-intro">Cioré is exploring a privacy-first, modular smartphone ecosystem made of 4 integrated research directions.</div>
+      <div class="s-intro">Cioré is exploring a calm, precise, premium-feeling device and interface experience with clean surfaces, intentional controls, tactile feedback, and clear visual hierarchy.</div>
 
-      <!-- OFFICIAL CONCEPT VIEW -->
       <div class="cat-label">Official Concept View</div>
-
       <div class="mockup-feature">
         <div class="mockup-copy">
           <span class="cc-eye">First Official Concept</span>
           <div class="cc-title">Cioré Phone Mockup</div>
-          <p class="bt">This is the first official concept view of the Cioré phone. It is being shared internally to give contributors a visual reference for the current product direction, industrial design language, and overall feel of the device.</p>
-          <p class="bt" style="margin-top:14px">This concept represents an early but intentional design milestone. As prototype development continues, some details may evolve through engineering, sourcing, usability, and materials decisions.</p>
+          <p class="bt">This is the first official concept view of the Cioré phone, shared internally to give contributors a visual reference for current product direction and industrial design language.</p>
         </div>
         <figure class="mockup-card">
-          <img
-            class="mockup-image"
-            src="https://i.ibb.co/cKCRBNNC/IMG-0102.jpg"
-            alt="First official concept mockup of the Cioré phone"
-            loading="lazy"
-          >
+          <img class="mockup-image" src="https://i.ibb.co/cKCRBNNC/IMG-0102.jpg" alt="First official concept mockup of the Cioré phone" loading="lazy">
           <figcaption class="mockup-caption">First official concept view for internal contributor reference.</figcaption>
         </figure>
       </div>
 
       <div class="cat-label">What We Are Working Toward</div>
-
       <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Direction 01</div>
-          <div class="cc-title">The Phone</div>
-          <div class="cc-body">A transparent, recycled-glass, modular smartphone concept with screw-focused assembly, visible internal structure, and a visual interface emphasizing calm precision, clean surfaces, and intentional tactile controls.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Direction 02</div>
-          <div class="cc-title">Lumé OS</div>
-          <div class="cc-body">A privacy-first operating environment built on a hardened open foundation. Cioré is researching custom privacy rules, permissions, and user experience. The near-term MVP uses an AOSP base for testing, subject to ongoing technical validation.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Direction 03</div>
-          <div class="cc-title">Nyro</div>
-          <div class="cc-body">Nyro is Cioré's energy and thermal research system. Cioré is exploring ways to help users depend less on wall charging through small supplemental energy inputs from light and warmth, alongside safer charging, battery longevity, thermal comfort, and repairability research. USB-C remains the primary charging method.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Direction 04</div>
-          <div class="cc-title">Gaia</div>
-          <div class="cc-body">Cioré is studying Gaia as a transparency and user-control research direction that may help people better understand AI-related activity inside apps and consider available choices.</div>
-        </div>
+        <div class="cc"><div class="cc-eye">Direction 01</div><div class="cc-title">The Phone</div><div class="cc-body">A modular hardware system exploring recycled glass, repairable assemblies, and tactile precision.</div></div>
+        <div class="cc"><div class="cc-eye">Direction 02</div><div class="cc-title">Lumé OS</div><div class="cc-body">A privacy-first operating environment built on a hardened open foundation with full OS-level user control.</div></div>
+        <div class="cc"><div class="cc-eye green">Direction 03</div><div class="cc-title">Nyro</div><div class="cc-body">Nyro is Cioré’s energy and thermal research system. Cioré is exploring ways to help users depend less on wall charging through small supplemental energy inputs from light and warmth, alongside safer charging, battery longevity, thermal comfort, and repairability research. USB-C remains the primary charging method.</div></div>
+        <div class="cc"><div class="cc-eye green">Direction 04</div><div class="cc-title">Gaia</div><div class="cc-body">Cioré is studying Gaia as a transparency and user-control research direction that may help people better understand AI-related activity inside apps and consider available choices.</div></div>
       </div>
 
-      <div class="cat-label">Consumer Problems We Solve</div>
-
-      <ul class="dl">
-        <li>Pervasive data exploitation: phones and apps track location, behaviors, and contacts, monetizing users as products rather than customers.</li>
-        <li>Forced financial upgrades: performance throttling and unsupported OS versions push users into buying new $800–$1,200 phones every 2–3 years.</li>
-        <li>Massive e-waste: 62 million tonnes of e-waste were generated in 2022, projected to reach 82 million tonnes by 2030, with only ~22% formally recycled.</li>
-        <li>Unethical supply chains: many phone batteries depend on cobalt and nickel from conflict zones and child labor-heavy mines.</li>
-        <li>Hidden environmental costs: producing one smartphone can emit as much CO2 as driving ~100 miles, while devices often end up landfilled prematurely.</li>
-      </ul>
-
-      <div class="cat-label">Business Problems We Solve</div>
-
-      <p class="bt">Organizations handling sensitive information face serious risks from mainstream consumer phones:</p>
-
-      <ul class="dl" style="margin-top:14px">
-        <li>Employee Data Leaks: staff mixing client data with ad-tracking apps and unvetted cloud backups creates constant exposure risk.</li>
-        <li>Compliance Challenges: standard phones log and sync heavily, making GDPR, HIPAA, and financial compliance audits painful and expensive.</li>
-        <li>Targeted Executive Attacks: C-level leaders face SIM swaps, phishing, and spyware aimed at deal intel and strategic plans.</li>
-        <li>Client Trust at Risk: a single leaked call, message, or document can destroy years of professional reputation.</li>
-        <li>Remote Teams Exposed: staff on untrusted networks relying on tracker-loaded devices creates organizational blind spots.</li>
-        <li>Rising Insurance Premiums: cyber insurers raise rates or deny coverage when fleets rely on generic consumer devices without verifiable hardware-level security.</li>
-      </ul>
-
-      <div class="cat-label">Who We Protect</div>
-
-      <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Individuals</div>
-          <div class="cc-body">Everyday users tired of being tracked and profiled who want something fundamentally different. People who want to keep a phone for 5+ years, repair parts, and avoid wasteful cycles. Eco-conscious consumers actively choosing sustainable, ethically sourced products.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Professionals</div>
-          <div class="cc-body">Journalists, lawyers, therapists, and doctors who require built-in confidentiality without complex setups. Ethical tech leaders and executives in climate tech, cybersecurity, ESG, and nonprofits who need devices aligned with their public values. Investigative fieldworkers, reporters, and NGO staff who must minimize location tracking and metadata exposure.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Organizations</div>
-          <div class="cc-body">Corporate risk and compliance teams needing verifiably secure device fleets that pass audits and reduce liability. Remote IT and security teams maintaining secure fleets for distributed staff in high-risk environments. Institutional ESG buyers including universities, nonprofits, and impact-driven enterprises seeking ethically sourced hardware.</div>
-        </div>
-      </div>
-
-      <div class="cat-label">Industrial Design and Form Factor</div>
-
-      <p class="bt">Cioré is exploring a calm, precise, premium-feeling device and interface experience with clean surfaces, intentional controls, tactile feedback, and clear visual hierarchy. Every edge, curve, and surface is considered in research models.</p>
-
-      <table class="st" style="margin-top:24px">
-        <thead><tr><th>Dimension</th><th>Target Benchmark</th></tr></thead>
-        <tbody>
-          <tr><td>Length</td><td>155–165 mm (standard research reference class)</td></tr>
-          <tr><td>Width</td><td>70–75 mm</td></tr>
-          <tr><td>Thickness</td><td>7–9 mm at center, tapering toward edges for visual thinness</td></tr>
-          <tr><td>Corner Radius</td><td>4–5 mm softly rounded corners</td></tr>
-          <tr><td>Long-Edge Curvature</td><td>2–3 mm radius to evaluate hand fatigue reduction</td></tr>
-        </tbody>
-      </table>
-
-      <div class="pull"><strong>Shape and Ergonomics:</strong> Continuous curved slab concepts with smooth side transitions. Front glass is slightly convex in conceptual models. soft curves prevent pressure points during testing. Asymmetrical bevel concepts act as a rest zone for thumb placement during single-handed ergonomics trials.</div>
-
-      <div class="cat-label">Materials: Recycled Glass and Nanocellulose</div>
-
-      <p class="bt">The structural body research focuses on recycled tempered glass on front and back surfaces. Recycled glass provides structural rigidity.</p>
-
-      <ul class="dl" style="margin-top:14px">
-        <li>Thickness Targets: 0.6–1.0 mm tempered glass panels.</li>
-        <li>Recycled Target: Evaluating 60%+ post-industrial or post-consumer glass cullet.</li>
-        <li>Reinforcement Testing: Studying chemical strengthening via ion-exchange.</li>
-      </ul>
-
-      <p class="bt">Nanocellulose (nanofibrillated cellulose from wood pulp or agricultural waste) is studied as an experimental reinforcement and bonding layer.</p>
-
-      <ul class="dl" style="margin-top:14px">
-        <li>Fibers under 15 nm form hydrogen-bonded networks being studied for tensile properties.</li>
-        <li>Research evaluates thin coatings (approx 0.1 mm) for toughness and optical clarity preservation.</li>
-        <li>Nanocellulose composite trials belong to early Phase 2+ research. Early test rigs utilize standard tempered glass.</li>
-      </ul>
-
-      <div class="cat-label">Modular Hardware System</div>
-
-      <p class="bt">Cioré is researching screw-focused primary assembly with bio-based sealing trials to maximize potential repairability.</p>
-
-      <p class="bt" style="margin-top:16px">Evaluated screw targets: M1.6–M2.0 Torx machine screws in stainless steel. Sealing research includes bio-derived removable gels for water resistance testing without permanent structural gluing.</p>
-
-      <div class="cat-label">Planned Swappable Modules</div>
-
-      <ul class="dl">
-        <li>Battery module (Nyro pack testing)</li>
-        <li>Camera module (two-lens ribbon)</li>
-        <li>Speaker and audio module</li>
-        <li>USB-C port board and vibration motor assemblies</li>
-      </ul>
-
-      <p class="bt">Modular design concepts aim to extend device longevity and enable component replacement without full device disposal.</p>
-
-      <div class="cat-label">Display System and Capacitive Controls</div>
-
-      <p class="bt">The display research evaluates high-contrast OLED layouts with layered visual depth effects.</p>
-
-      <ul class="dl" style="margin-top:14px">
-        <li>Phase 1–2 Research: Standard OLED panels paired with under-glass visual treatments.</li>
-        <li>Phase 3+ Research: Studying transparent OLED or MicroLED modules for future feasibility.</li>
-      </ul>
-
-      <div class="cat-label">Capacitive Controls (No Mechanical Buttons)</div>
-
-      <ul class="dl">
-        <li>Volume Strip: Capacitive touch strip concept with haptic feedback.</li>
-        <li>Power Bar: Top touch zone for wake/sleep inputs.</li>
-        <li>Battery Mode Toggle: Capacitive zone to evaluate power profile switches.</li>
-        <li>All touch control concepts pair with haptic and audio signals for accessibility evaluation.</li>
-      </ul>
-
-      <div class="cat-label">Camera System</div>
-
-      <p class="bt">Rear Camera Concept: Two-lens vertical arrangement flush with the back profile.</p>
-      <p class="bt" style="margin-top:14px">Front Camera Concept: Under-glass or visually integrated lens placement.</p>
-      <p class="bt" style="margin-top:14px">Back Panel Concept: Smoked dark panel that is opaque under standard light but reveals internal geometry under strong lighting.</p>
-      <p class="bt" style="margin-top:14px">Notification Indicator Concept: Soft LED lighting zone for subtle status presence, fully controllable in user settings.</p>
-
-      <div class="cat-label">Additional Phone Features</div>
-
-      <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Messaging</div>
-          <div class="cc-title">Encrypted Messaging System</div>
-          <div class="cc-body">Exploring end-to-end encrypted messaging research using open protocols. UI concepts like theme accents and voice clip sharing are designed around encrypted standards. Local classification research explores flagging unrecognized sender patterns.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Navigation</div>
-          <div class="cc-title">GPS and Offline Navigation</div>
-          <div class="cc-body">Testing offline mapping using OpenStreetMap datasets. Research includes optional location obfuscation options and emergency mesh beaconing over BLE when cellular is disconnected.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Audio</div>
-          <div class="cc-title">Sound and Audio Experience</div>
-          <div class="cc-body">Researching directional mic processing, local audio transcription, and offline voice command handling without external cloud dependencies.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Video</div>
-          <div class="cc-title">Video Calling Research</div>
-          <div class="cc-body">Exploring E2EE browser-based WebRTC video links that require no client installation for recipients.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Biometrics</div>
-          <div class="cc-title">Biometric Unlock Methods</div>
-          <div class="cc-body">Studying secure facial verification models stored strictly in local hardware enclaves. Biometric data remains isolated on device.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">OS</div>
-          <div class="cc-title">Custom OS Features</div>
-          <div class="cc-body">Testing system focus modes, interface adaptations based on environmental cues, and optional local peer discovery options.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Control</div>
-          <div class="cc-title">Update and Access Control</div>
-          <div class="cc-body">Researching clear line-item software update lists with selective deferral options for non-critical patches.</div>
-        </div>
-      </div>
-
+      <div class="cat-label">Community Hardware Feedback &amp; Form Factors</div>
+      <p class="bt">We are actively conducting research on audio jacks, modular buttons, keyboard attachments, phone stands, case variations, and alternative ergonomic shapes based on waitlist input.</p>
       <div style="height:60px"></div>
-
-      <div class="cat-label">Community Hardware Feedback</div>
-      <p class="bt" style="margin-bottom:16px">Our waitlist and social media community has been actively sharing what they want from the Cioré phone. These are real requests from real people who are waiting for this product. We take this seriously and it informs our research direction. Below is what we are hearing and where things stand.</p>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Audio Jack</div><span class="pg-badge pg-badge-active">Researching</span></div>
-        <div class="pg-card-body">A significant portion of the waitlist wants a physical audio jack. This is one of the most consistent hardware requests we have received. We are researching how to include a 3.5mm audio jack without compromising the modular design or the form factor. For users who use wired headphones, adapters, or external recording equipment, this matters. It is on our list and being evaluated seriously.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Modular Physical Buttons</div><span class="pg-badge pg-badge-active">Researching</span></div>
-        <div class="pg-card-body">The modular design of the Cioré phone opens the door to customizable physical button placement and function. Community feedback has pointed to programmable side buttons, customizable shortcut keys, and the ability to configure hardware controls without software workarounds. We are researching how modular button systems can work within the existing screw-assembly design framework.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Modular Keyboard Attachment</div><span class="pg-badge pg-badge-active">Researching</span></div>
-        <div class="pg-card-body">Some community members want the option of a physical keyboard. A snap-on or slide-out keyboard module would fit within the modular philosophy of the phone and serve users who prefer typing without relying entirely on a touchscreen. We are researching how this would integrate with the hardware and what the technical requirements would be for a first or later phase implementation.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Phone Stand</div><span class="pg-badge pg-badge-active">Researching</span></div>
-        <div class="pg-card-body">A purpose-built stand that works with the Cioré phone's dimensions and solar charging behavior is a natural companion accessory. Community interest has been clear. This could function as both a display stand and a Nyro-compatible solar positioning tool. We are looking at how this fits into the accessory ecosystem.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Case and Form Factor Variations</div><span class="pg-badge pg-badge-active">Researching</span></div>
-        <div class="pg-card-body">Not everyone connects with the same phone shape. We have received feedback from community members who want different casing options, including different grip profiles, rounded versus flat edge variations, and alternative materials. The modular nature of the phone makes this more feasible than on a traditional sealed device. We are researching what variations make sense for a first release and what could come later as the product line grows.</div>
-      </div>
-
-      <div class="wb"><div class="wb-icon">&#9432;</div><div>These are active research areas informed directly by what our community is asking for. If you have background in hardware design, materials research, or product engineering and want to contribute to any of these, reach out on Discord or check the open workstreams on the Working On Now page.</div></div>
-
     </div><!-- /p3 -->
-<div class="panel" id="p4">
 
+    <div class="panel" id="p4">
       <div class="s-heading">Lumé OS</div>
-      <div class="s-intro">Lumé OS is an operating system concept focused on user control, privacy enforcement, and plain-language settings. Apps do not choose what they can access. Lumé decides. Cioré is researching this custom privacy foundation to give users meaningful choices over their data.</div>
+      <div class="s-intro">Lumé OS is Cioré's privacy-first operating environment concept built on a hardened open foundation. Research and early architecture planning are underway.</div>
 
       <div class="cat-label">1. Lumé OS: Start Here</div>
-      <p class="bt">Lumé OS is Cioré's operating system research project. It is being planned as an open, hardened operating environment designed to put users in direct control of app permissions, background behaviors, and data choices. Cioré is currently researching requirements, evaluating open-source bases, and designing initial user interaction patterns.</p>
+      <p class="bt">Lumé OS is designed to place privacy enforcement directly into the operating environment. Apps do not choose what they access; Lumé governs system permissions, sandboxing, and background activity.</p>
 
       <div class="cat-label">2. Current Direction</div>
-      <p class="bt">The current direction for Lumé OS focuses on establishing a secure, performant proof of concept built on a hardened open-source Android (AOSP) foundation. This approach allows Cioré to test privacy enforcement and user interface concepts on real reference hardware while longer-term architecture options are evaluated.</p>
+      <p class="bt">The current direction utilizes a hardened AOSP open foundation for early testing and broad hardware compatibility while custom Cioré privacy frameworks are designed on top.</p>
 
       <div class="cat-label">3. Lumé OS Kickoff</div>
-      <p class="bt">The Lumé OS kickoff phase organizes initial requirements, build environments, reference hardware choices, and contributor tasks. This phase establishes the foundation for early testing, developer workflows, and documentation.</p>
+      <p class="bt">Initial kickoff focuses on requirement gathering, boot target evaluation on reference hardware, and security baseline definition. No reference hardware or feature set is finalized.</p>
 
       <div class="cat-label">4. Planning Map</div>
-      <p class="bt">The Lumé OS planning map outlines the progression from initial requirements gathering to prototype testing. All stages are subject to engineering, security, hardware, and compatibility review.</p>
-
-      <div class="phases" style="margin-top:16px;">
-        <div class="ph-row"><div class="ph-num">Stage 1</div><div><div class="ph-title">Requirements &amp; Reference Setup</div><div class="ph-body">Defining security targets, threat models, and setting up build workstations with reference test devices.</div></div></div>
-        <div class="ph-row"><div class="ph-num">Stage 2</div><div><div class="ph-title">Hardened Base Validation</div><div class="ph-body">Compiling and testing a hardened AOSP base on reference hardware to verify boot integrity and hardware driver support.</div></div></div>
-        <div class="ph-row"><div class="ph-num">Stage 3</div><div><div class="ph-title">Privacy Layer &amp; Interface Prototype</div><div class="ph-body">Developing Cioré's custom permission enforcement rules, sandboxing boundaries, and plain-language privacy dashboard.</div></div></div>
-        <div class="ph-row"><div class="ph-num">Stage 4</div><div><div class="ph-title">Compatibility &amp; User Research</div><div class="ph-body">Testing app isolation tiers, evaluating optional compatibility features, and conducting community usability reviews.</div></div></div>
-      </div>
+      <ul class="dl">
+        <li>Hardened AOSP base evaluation and boot testing.</li>
+        <li>Privacy enforcement layer definition and permissions dashboard architecture.</li>
+        <li>Sandboxing rules and containerized app testing.</li>
+        <li>System UI design, notification management, and settings interfaces.</li>
+      </ul>
 
       <div class="cat-label">5. Why AOSP First</div>
-      <p class="bt">Building on a hardened AOSP foundation for early testing allows Cioré to leverage established hardware driver support, verified boot mechanisms, and security research. This provides a stable environment to build and test Cioré's unique privacy enforcement layer and user interface without needing to construct fundamental hardware drivers from scratch.</p>
+      <p class="bt">Using a hardened open foundation allows rapid proof-of-concept iteration on accessible hardware while establishing core security practices.</p>
 
       <div class="cat-label">6. Workspace Setup</div>
-      <p class="bt">Setting up a Lumé OS research workspace requires a high-performance build machine or cloud compilation instance, unlockable reference hardware (such as recent Pixel devices for early testing), and standard Android platform development tools. Detailed setup guides are being compiled for technical contributors.</p>
+      <p class="bt">Build environments require high-memory workstations or dedicated cloud build instances capable of compiling full open-source operating system targets.</p>
 
       <div class="cat-label">7. Privacy, Data Control &amp; Permissions</div>
-      <p class="bt">Lumé OS plans to replace vague system permissions with explicit, time-limited, and plain-language choices. Users will be able to see exactly what data an app requests, choose temporary or one-time access, and review clear activity logs in the privacy dashboard.</p>
+      <p class="bt">Permissions are explicit, reviewable, and time-bound. Users can audit app behavior in plain language through an integrated privacy dashboard.</p>
 
       <div class="cat-label">8. Accessibility &amp; Waitlist Feedback</div>
-      <p class="bt">Community and waitlist feedback directly shapes Lumé OS features. Research includes high-contrast visual modes, customizable font scaling, tactile touch responses, and simplified navigation flows to ensure technology is accessible to all users.</p>
+      <p class="bt">User feedback directly informs UI layout, contrast, dyslexia-friendly typography, haptic cues, and plain-language settings.</p>
 
       <div class="cat-label">9. Data Transfer &amp; User Transition Research</div>
-      <p class="bt">Cioré is studying safe, user-controlled methods for transferring contacts, media, and essential data from existing mobile platforms to Lumé OS without exposing data to unvetted cloud services or third-party tracking during transition.</p>
+      <p class="bt">Cioré is studying safe, transparent data migration patterns to help users transition smoothly from legacy mobile platforms without exposing unencrypted backups.</p>
 
       <div class="cat-label">10. Research Status &amp; What Is Not Yet Promised</div>
-      <div class="wb"><div class="wb-icon">&#9432;</div><div><strong>Research Notice:</strong> Lumé OS is in early planning and research. No reference hardware, release timeline, budget, or final feature set is finalized. Specifications and architecture directions are subject to security, engineering, and hardware validation. This is not yet a product promise.</div></div>
+      <p class="bt">This work is in early research and planning. All concepts remain subject to engineering, security, accessibility, hardware, licensing, carrier, and compatibility review. Not yet a product promise.</p>
 
       <div class="cat-label">11. How Contributors Can Help</div>
-      <p class="bt">Contributors can support Lumé OS planning by researching open-source security models, drafting user documentation, reviewing privacy permission UI patterns, and testing build environments. Visit the Working On Now panel to join open research tasks.</p>
-
+      <p class="bt">Contributors can support documentation, system architecture review, UI mockups, and early kernel/AOSP research streams outlined in Working On Now.</p>
       <div style="height:60px"></div>
-
     </div><!-- /p4 -->
 
-<!-- DEDICATED GAIA PAGE PANEL -->
-<div class="panel" id="pGaia">
-      <h1 class="s-heading">Gaia: AI Transparency &amp; User Control Research</h1>
-      <p class="s-intro">Cioré is studying Gaia as an AI transparency and user-control research direction designed to help people understand AI activity inside apps and make informed choices.</p>
+    <!-- DEDICATED GAIA PAGE -->
+    <div class="panel" id="pGAIA">
+      <div class="s-heading">Gaia: AI Transparency &amp; User Control Research</div>
+      <div class="s-intro">Cioré is studying Gaia as a transparency and user-control research direction focused on plain-language notices, data awareness, and clear permission choices inside modern apps.</div>
 
-      <div class="cat-label">Origin and Evolution of Gaia</div>
-      <p class="bt">Gaia originally began as research into ethical, on-device AI and related infrastructure concepts. As Cioré gathered feedback from waitlist subscribers and community members, a clear consensus emerged: users do not want forced AI, mandatory assistants, or background AI behavior running without their explicit knowledge and consent.</p>
+      <div class="cat-label">Research Background &amp; Origins</div>
+      <p class="bt">Gaia began as research into ethical, on-device AI and related infrastructure concepts. As community and waitlist feedback arrived, users expressed clear concerns: people did not want forced AI, mandatory assistants, or background AI behavior they did not ask for.</p>
 
       <div class="cat-label">Current Research Focus</div>
-      <p class="bt">In response to community feedback, Cioré reframed Gaia into a research direction centered on transparency and user control. Rather than acting as a background automation layer, Gaia explores how an operating system can give users clear visibility into when apps trigger AI processes, what data those processes request, and how to grant or revoke permission in plain language.</p>
+      <p class="bt">Cioré is now studying Gaia as a transparency and user-control layer around AI-related activity inside apps. The camera or microphone indicator on standard phones serves as an analogy for a clear, understandable user signal when background processing occurs.</p>
 
       <div class="cg" style="margin-top:20px;">
-        <div class="cc">
-          <div class="cc-eye green">Transparency</div>
-          <div class="cc-title">Plain-Language Notices</div>
-          <div class="cc-body">Researching clear, simple notifications that explain when an app uses on-device or cloud AI tools, avoiding technical jargon or hidden terms.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Control</div>
-          <div class="cc-title">User Choice Patterns</div>
-          <div class="cc-body">Studying toggle patterns that allow users to limit, block, or approve AI-related network requests on a per-app basis.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Analogy</div>
-          <div class="cc-title">Status Indicators</div>
-          <div class="cc-body">The camera or microphone indicator on modern phones serves as an analogy for a clear, understandable user signal when AI features are active.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Accessibility</div>
-          <div class="cc-title">Multi-Sensory Feedback</div>
-          <div class="cc-body">Identifying accessibility needs for visual, haptic, audio, and plain-language feedback so all users understand system status.</div>
-        </div>
+        <div class="cc"><div class="cc-eye green">Notices</div><div class="cc-title">Plain-Language Signals</div><div class="cc-body">Researching how system notices can clearly explain when an app invokes external or background AI models.</div></div>
+        <div class="cc"><div class="cc-eye green">Control</div><div class="cc-title">User Choice Patterns</div><div class="cc-body">Exploring permission controls that allow users to toggle or limit AI activity on a per-app basis.</div></div>
+        <div class="cc"><div class="cc-eye green">Data</div><div class="cc-title">Data Awareness</div><div class="cc-body">Studying what data payloads apps attempt to pass to cloud AI endpoints and how to make that visible.</div></div>
+        <div class="cc"><div class="cc-eye green">Accessibility</div><div class="cc-title">Multi-Modal Feedback</div><div class="cc-body">Ensuring signals use visual, haptic, and audio indicators tailored for all users.</div></div>
       </div>
 
-      <div class="cat-label">Research Boundaries &amp; Status</div>
-      <div class="wb"><div class="wb-icon">&#9432;</div><div><strong>Research Notice:</strong> Gaia is an active research exploration into AI transparency and permission design. Cioré does not claim that Gaia detects or blocks all AI systems automatically. All research is early, ongoing, and subject to technical validation.</div></div>
-
+      <div class="cat-label">Research Stage Notice</div>
+      <div class="wb"><div class="wb-icon">&#9432;</div><div>This is active conceptual research. Cioré is exploring these patterns to address community feedback. Gaia is not a finished product feature or promise.</div></div>
       <div style="height:60px"></div>
-</div><!-- /pGaia -->
+    </div><!-- /pGAIA -->
 
-<div class="panel" id="p5">
-
+    <div class="panel" id="p5">
       <div class="s-heading">Nyro: Energy &amp; Thermal Research</div>
-      <div class="s-intro">Nyro is Cioré's research initiative into energy handling, battery longevity, thermal management, and safe charging systems for modular mobile technology.</div>
-
-      <div class="cat-label">Nyro Overview and Core Goals</div>
-
-      <ul class="dl">
-        <li>Researching ethically sourced battery chemistries, avoiding cobalt and unverified supply chains.</li>
-        <li>Exploring modular, user-replaceable battery packs with straightforward swap access.</li>
-        <li>Solar-assisted energy input research: studying how supplemental photovoltaic surfaces can top up energy under specific light conditions.</li>
-        <li>Thermal management research, load balancing, and safe operating temperature guidelines.</li>
-      </ul>
-
-      <div class="cat-label">Solar-Assisted Charging vs Solar-Powered</div>
-
-      <p class="bt">Cioré devices are explored as <strong>solar-assisted</strong>, not solar-powered. Clarifying this distinction establishes accurate expectations for contributors and community members.</p>
-
-      <div class="pull">
-        <strong>Solar-Assisted Explained:</strong> Solar-assisted means Cioré is exploring small supplemental energy inputs from light or environmental sources to top up or support battery performance. It does not replace regular charging. USB-C remains the primary charging method. Claiming a phone is "solar-powered" would incorrectly imply that sunlight alone is sufficient for normal phone operation, which is not the case for modern smartphone power demands.
-      </div>
-
-      <div class="cat-label">What Solar Assistance Is Being Researched To Deliver</div>
-
-      <ul class="dl">
-        <li>Under favorable outdoor sunlight, supplemental PV surfaces are studied to evaluate small energy gains that may extend standby time.</li>
-        <li>Transparent and back-panel PV materials are evaluated for slow trickle charging under direct sunlight.</li>
-        <li>Indoors and in standard ambient light, supplemental energy gains are minimal and serve primarily as research into low-power harvesting.</li>
-        <li>USB-C remains the primary, reliable daily charging method for all Cioré device concepts.</li>
-      </ul>
-
-      <div class="cat-label">Battery Chemistry Research</div>
-
-      <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Near-Term Research</div>
-          <div class="cc-title">LFP (Lithium Iron Phosphate)</div>
-          <div class="cc-body">Studying cobalt-free LFP chemistry for its thermal stability and cycle life in modular casing trials.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Mid-Term Research</div>
-          <div class="cc-title">Sodium-Ion</div>
-          <div class="cc-body">Researching abundant sodium-based alternatives to reduce reliance on lithium supply chains as commercial sodium-ion cells mature.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Long-Term Exploration</div>
-          <div class="cc-title">Solid-State Concepts</div>
-          <div class="cc-body">Monitoring academic and industry progress in solid-state energy storage as a future research topic.</div>
-        </div>
-      </div>
-
-      <div class="cat-label">Thermal Management Research</div>
-
-      <ul class="dl">
-        <li>Evaluating bio-based thermal spreaders and composites to assist heat dissipation around battery and processing areas.</li>
-        <li>Studying thermal conductivity targets to maintain comfortable device surface temperatures under workload.</li>
-        <li>Testing graphite and copper heat distribution layers in combination with bio-polymer materials.</li>
-      </ul>
-
-      <div class="cat-label">Modular Battery and Take-Back Program Research</div>
-
-      <p class="bt">Battery module concepts focus on user-accessible removal via mechanical fasteners. Research includes studying closed-loop take-back workflows to ensure safe material recovery and recycling at end-of-life.</p>
-
+      <div class="s-intro">Nyro represents Cioré's research into supplemental energy harvesting, safer battery chemistries, and passive thermal management. USB-C remains the primary charging method.</div>
+      <div class="cat-label">Solar Assistance vs. Solar Powered</div>
+      <p class="bt">Cioré devices are solar-assisted, not solar-powered. Integrated photovoltaic surfaces supplement daily standby energy and extend runtime under outdoor light, but wired charging remains primary.</p>
+      <div class="cat-label">Chemistries Under Study</div>
+      <p class="bt">Research directions include LFP (Lithium Iron Phosphate) and sodium-ion options to prioritize safety, longevity, and non-conflict sourcing over raw energy density.</p>
       <div style="height:60px"></div>
-
     </div><!-- /p5 -->
-<div class="panel" id="p6">
 
-      <div class="s-heading">Radio and Resilient Communication</div>
-      <div class="s-intro">Cioré is researching resilient communication methods and potential mesh networking concepts to explore how devices might stay connected during network outages or offline scenarios.</div>
-
-      <div class="cat-label">Offline Mesh Communication Research</div>
-
-      <div class="cg">
-        <div class="cc">
-          <div class="cc-eye">Research Area 01</div>
-          <div class="cc-title">Short-Range Peer Mesh</div>
-          <div class="cc-body">Studying low-energy Bluetooth (BLE) and Wi-Fi Direct protocols for short-range peer-to-peer messaging testing without central cell towers.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye">Research Area 02</div>
-          <div class="cc-title">Sub-GHz Radio Concepts</div>
-          <div class="cc-body">Researching unlicensed sub-GHz spectrum usage for low-bandwidth, long-range text or data packet trials in remote environments.</div>
-        </div>
-      </div>
-
-      <div class="cat-label">Push-to-Talk &amp; Walkie-Talkie Research</div>
-
-      <p class="bt">Cioré is studying press-to-transmit voice workflows over local digital radio or peer-to-peer protocols. Research focuses on short voice note clips and encrypted group keys for localized emergency communication.</p>
-
-      <div class="cat-label">Emergency Broadcast Reception (AM/FM/NOAA)</div>
-
-      <p class="bt">Evaluating offline broadcast receiver chips to allow devices to tune into public emergency FM/AM radio frequencies and NOAA weather alerts without cellular service.</p>
-
-      <div class="cat-label">Regulatory &amp; Legal Boundaries</div>
-
-      <div class="wb">
-        <div class="wb-icon">⚖</div>
-        <div>Radio transmission is strictly regulated by government agencies (such as the FCC). Cioré's research adheres strictly to legal spectrum limits, ISM unlicensed bands, and public safety guidelines. Transmission on licensed emergency or public safety frequencies is prohibited. Cioré does not promise production transmission range or emergency reliability features.</div>
-      </div>
-
+    <div class="panel" id="p6">
+      <div class="s-heading">Radio and Comms</div>
+      <div class="s-intro">Exploring offline mesh communication, sub-GHz short-burst radios, and emergency broadcast reception for resilient, local connectivity.</div>
+      <div class="cat-label">Resilient Communication Research</div>
+      <p class="bt">Studying BLE, Wi-Fi Direct, and ISM-band walkie-talkie style communication modes for local group messaging when cellular networks are unavailable. All research accounts for legal, licensing, range, carrier, and safety limits.</p>
       <div style="height:60px"></div>
-
     </div><!-- /p6 -->
+
     <div class="panel" id="p7">
-      <h1 class="s-heading">User Control &amp; System Design</h1>
-      <p class="s-intro">System design at Cioré centers on user control, plain-language settings, and transparent system behavior. Users should always understand what their device is doing and have clear options to adjust permissions.</p>
-
-      <div class="cat-label">The Direction We Are Taking</div>
-      <p class="bt" style="margin-bottom:16px">Instead of hidden background processes or forced cloud features, resource management, battery optimization, and thermal controls are designed directly into kernel and operating system frameworks where users can see and control them.</p>
-
-      <div class="pull">Core Principle: Efficient OS engineering and kernel governors deliver performance and battery control without background tracking or cloud dependencies.</div>
-
-      <div class="cg">
-        <div class="cc"><div class="cc-eye green">Battery</div><div class="cc-title">Kernel Power Management</div><div class="cc-body">Researching CPU power state controls built into the system kernel. Settings are presented in plain language without background data gathering.</div></div>
-        <div class="cc"><div class="cc-eye green">Thermal</div><div class="cc-title">System Thermal Boundaries</div><div class="cc-body">Evaluating OS-level thermal governors that manage heating directly on the device using clear threshold rules.</div></div>
-        <div class="cc"><div class="cc-eye green">Apps</div><div class="cc-title">Transparent Resource Limits</div><div class="cc-body">Studying control groups (CGroups) to limit background memory and CPU usage based on active user preferences.</div></div>
-        <div class="cc"><div class="cc-eye green">Isolation</div><div class="cc-title">App Sandboxing</div><div class="cc-body">Exploring isolation boundaries so apps cannot read each other's data or run unapproved background connections.</div></div>
-      </div>
-
-      <div class="cat-label">Active Research Areas</div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Linux Kernel Power Governors</div><span class="pg-badge pg-badge-progress">Research Active</span></div>
-        <div class="pg-card-body">Studying kernel power state management to deliver efficient energy optimization without cloud communication.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">CGroups Resource Allocation</div><span class="pg-badge pg-badge-progress">Research Active</span></div>
-        <div class="pg-card-body">Evaluating process control groups to give users direct sliders over app resource usage.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Open OS Power Management</div><span class="pg-badge pg-badge-progress">Research Active</span></div>
-        <div class="pg-card-body">Analyzing power HAL implementations across open-source operating systems to inform Lumé OS development.</div>
-      </div>
-
+      <div class="s-heading">User Control &amp; System Design</div>
+      <div class="s-intro">Focusing on understandable settings, optional features, user choices, clear permissions, privacy, accessibility, and kernel-level resource governors.</div>
+      <div class="cat-label">Kernel Governors &amp; CGroups</div>
+      <p class="bt">Research focuses on standard Linux kernel power governors and CGroups resource limits to handle battery, thermal, and app prioritization without background surveillance engines.</p>
+      <div style="height:60px"></div>
     </div><!-- /p7 -->
 
-<div class="panel" id="p8">
-
+    <div class="panel" id="p8">
       <div class="s-heading">Ethical Materials and Sustainability</div>
-      <div class="s-intro">Cioré searches for healthier, lower-impact alternatives to traditional manufacturing practices that can harm people, privacy, worker safety, and the environment.</div>
-
-      <div class="cat-label">Eco-Conscious Materials Research</div>
-
-      <div class="cg">
-        <div class="cc">
-          <div class="cc-eye green">Material 01</div>
-          <div class="cc-title">Recycled Glass</div>
-          <div class="cc-body">Researching post-consumer and post-industrial recycled glass for enclosure surfaces to lower production emissions compared to virgin glass.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Material 02</div>
-          <div class="cc-title">Nanocellulose Composites</div>
-          <div class="cc-body">Studying plant-derived nanocellulose as an experimental reinforcement layer for toughness and optical clarity testing.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Material 03</div>
-          <div class="cc-title">Bio-Based Polymers</div>
-          <div class="cc-body">Evaluating renewable, bio-sourced polymers for internal brackets and non-structural components.</div>
-        </div>
-        <div class="cc">
-          <div class="cc-eye green">Material 04</div>
-          <div class="cc-title">Cactus Biopolymers</div>
-          <div class="cc-body">Researching low-water agricultural materials for internal thermal pads and protective layers.</div>
-        </div>
-      </div>
-
-      <div class="cat-label">Lifecycle and Circularity Goals</div>
-
-      <ul class="dl green">
-        <li>Designing for disassembly to support component replacement, repair, and recycling.</li>
-        <li>Utilizing standardized mechanical fasteners to eliminate permanent structural glues where feasible.</li>
-        <li>Evaluating modular battery take-back workflows to ensure safe material recovery.</li>
-      </ul>
-
-      <div class="cat-label">Supplier Verification &amp; Ethical Sourcing</div>
-      <p class="bt" style="margin-bottom:16px">Cioré researches component suppliers carefully. Every candidate undergoes a deliberate verification check to review labor practices, material origins, and environmental alignment before research partnerships are considered.</p>
-
+      <div class="s-intro">Searching for healthier alternatives to practices that can harm people, privacy, device longevity, workers, and the environment.</div>
+      <div class="cat-label">Materials &amp; Sourcing</div>
+      <p class="bt">Evaluating recycled glass, nanocellulose composites, bio-polymers, and modular assemblies with standardized screws to support easy repair and recycling.</p>
+      <div style="height:60px"></div>
     </div><!-- /p8 -->
-        <div class="panel" id="p10">
+
+    <div class="panel" id="p10">
       <h1 class="s-heading">What We Are Working On Now</h1>
-      <p class="s-intro">This is the central place to explore Cioré's current focus areas, active workstreams, and open contributor opportunities. Review the starter options below or browse detailed priority cards to find where your skills fit best.</p>
+      <p class="s-intro">This is the best place to understand what Cioré is currently focused on, what is actively moving, and where contributor support is welcome. Review this page, find areas aligned with your interests and skills, and head to the Discord channel listed on each card to connect with the team working on it.</p>
 
-      <!-- 5 Contributor-Fit Starter Cards -->
-      <div class="cat-label">Find a Place to Jump In</div>
-      <p class="bt" style="margin-bottom:16px;">Choose an area that fits what you enjoy or what you are good at. You do not need to understand every part of Cioré before you begin.</p>
-
-      <div class="cg" style="margin-bottom:28px;">
-        <div class="cc" onclick="window.navigateTo('p10'); document.getElementById('ws-waitlist').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">
-          <div class="cc-eye green">Writing &amp; Content</div>
-          <div class="cc-title">Writing, Newsletters &amp; Community Content</div>
-          <div class="cc-body">For contributors who enjoy newsletters, surveys, content planning, audience engagement, community questions, and turning updates into clear language.</div>
-        </div>
-        <div class="cc" onclick="window.navigateTo('p10'); document.getElementById('ws-outreach').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">
-          <div class="cc-eye green">Research &amp; Sourcing</div>
-          <div class="cc-title">Research &amp; Organization</div>
-          <div class="cc-body">For contributors who enjoy researching grants, organizations, ethics, suppliers, comparisons, tracking, and structured research.</div>
-        </div>
-        <div class="cc" onclick="window.navigateTo('p10'); document.getElementById('ws-testing').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">
-          <div class="cc-eye green">Design &amp; UX</div>
-          <div class="cc-title">Design, UX &amp; Accessibility</div>
-          <div class="cc-body">For contributors who enjoy user experience, accessible technology, usability, ergonomics, form factors, controls, visual clarity, and reviewing waitlist feedback.</div>
-        </div>
-        <div class="cc" onclick="window.navigateTo('p4');" style="cursor:pointer;">
-          <div class="cc-eye green">Privacy &amp; Tech</div>
-          <div class="cc-title">Technology, Privacy &amp; Operating Systems</div>
-          <div class="cc-body">For contributors who enjoy privacy, operating systems, technical research, AI transparency, requirements, and understandable system design.</div>
-        </div>
-        <div class="cc" onclick="window.navigateTo('p10'); document.getElementById('ws-roadmap').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">
-          <div class="cc-eye green">Planning &amp; Strategy</div>
-          <div class="cc-title">Roadmap, Outreach &amp; Planning</div>
-          <div class="cc-body">For contributors who enjoy planning, sequencing, communication strategy, operational organization, contributor pipelines, and aligned-organization outreach.</div>
+      <!-- Quick Start Fit Cards -->
+      <div style="margin-bottom:28px;">
+        <strong style="font-family:var(--f-ui);font-size:16px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink);display:block;margin-bottom:4px;">Find a Place to Jump In</strong>
+        <p class="bt" style="font-size:13.5px;color:var(--ink-3);margin-bottom:14px;">Choose an area that fits what you enjoy or what you are good at. You do not need to understand every part of Cioré before you begin.</p>
+        <div class="fit-grid">
+          <div class="fit-card" onclick="window.navigateTo('p10')">
+            <div>
+              <div class="fit-card-title">1. Writing, Newsletters &amp; Content</div>
+              <div class="fit-card-body">Newsletters, surveys, content planning, audience engagement, and clear language.</div>
+            </div>
+            <div class="fit-card-link">View Area &rarr;</div>
+          </div>
+          <div class="fit-card" onclick="window.navigateTo('p10')">
+            <div>
+              <div class="fit-card-title">2. Research &amp; Organization</div>
+              <div class="fit-card-body">Grant research, ethical vetting, supplier tracking, and structured comparisons.</div>
+            </div>
+            <div class="fit-card-link">View Area &rarr;</div>
+          </div>
+          <div class="fit-card" onclick="window.navigateTo('p10')">
+            <div>
+              <div class="fit-card-title">3. Design, UX &amp; Accessibility</div>
+              <div class="fit-card-body">User experience, form factors, physical controls, ergonomics, and accessibility.</div>
+            </div>
+            <div class="fit-card-link">View Area &rarr;</div>
+          </div>
+          <div class="fit-card" onclick="window.navigateTo('p4')">
+            <div>
+              <div class="fit-card-title">4. Technology, Privacy &amp; OS</div>
+              <div class="fit-card-body">Operating systems, privacy frameworks, system design, and AI transparency.</div>
+            </div>
+            <div class="fit-card-link">Open Lumé OS &rarr;</div>
+          </div>
+          <div class="fit-card" onclick="window.navigateTo('p10')">
+            <div>
+              <div class="fit-card-title">5. Roadmap &amp; Planning</div>
+              <div class="fit-card-body">Sequencing priorities, operational planning, outreach, and contributor pipelines.</div>
+            </div>
+            <div class="fit-card-link">View Area &rarr;</div>
+          </div>
         </div>
       </div>
 
       <div class="cat-label">Current Phase</div>
-      <div style="background:#0d1117;border-radius:12px;padding:32px 36px;margin-bottom:8px;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(24,165,88,0.14),0 2px 16px rgba(0,0,0,0.18)">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 120%,rgba(24,165,88,0.18) 0%,transparent 70%);pointer-events:none"></div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#18a558;margin-bottom:14px">Research, Proof of Concept &amp; Lumé OS Kickoff</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;position:relative">
-          <div style="padding:16px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#18a558;margin-bottom:6px">Growing Community Input</div>
-            <div style="font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.6">Gathering survey feedback, waitlist preferences, and accessibility requirements to guide design choices.</div>
-          </div>
-          <div style="padding:16px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#18a558;margin-bottom:6px">Early Hardware Research</div>
-            <div style="font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.6">Testing early hardware concepts, component sourcing, ergonomics, and safe test-fixture learning.</div>
-          </div>
-          <div style="padding:16px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px">
-            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#18a558;margin-bottom:6px">Lumé OS Kickoff</div>
-            <div style="font-size:13.5px;color:rgba(255,255,255,0.65);line-height:1.6">Setting up reference development environments, architecture documentation, and privacy layer specs.</div>
-          </div>
-        </div>
+      <div style="background:#0d1117;border-radius:12px;padding:24px 28px;margin-bottom:20px;box-shadow:0 0 40px rgba(24,165,88,0.14);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#18a558;margin-bottom:6px">Active Phase</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:0.04em;margin-bottom:6px;">Research, Proof of Concept &amp; Lumé OS Kickoff</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.6">Cioré is actively researching, testing early hardware ideas, organizing requirements, growing community input, and beginning the Lumé OS planning foundation.</div>
       </div>
 
-      <div class="cat-label">Active Workstreams</div>
+      <div class="cat-label">Active Work Areas</div>
 
-      <div class="pg-card" id="ws-waitlist">
+      <!-- A. Waitlist & Community Engagement -->
+      <div class="pg-card">
         <div class="pg-card-head"><div class="pg-card-title">Waitlist &amp; Community Engagement</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Help build and nurture Cioré's community. Work includes reviewing surveys, suggesting voting topics, analyzing audience feedback, recommending waitlist engagement channels, and writing clear newsletter copy explaining Cioré's journey.</div>
-        <div class="pg-support-label">Contributor Fit</div>
+        <div class="pg-card-body">Reviewing audience surveys, suggesting survey questions and voting topics, analyzing feedback, recommending audience segments, refining newsletter copy, and explaining Cioré’s journey clearly to support community growth.</div>
+        <div class="pg-support-label">Fit</div>
         <div class="pg-support-body">This may fit you if you enjoy newsletters, surveys, content planning, community-building, user feedback, audience research, or writing clear questions.</div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#waitlist-growth</div>
       </div>
 
-      <div class="pg-card" id="ws-outreach">
+      <!-- B. Contributor Pipeline & Strategic Outreach -->
+      <div class="pg-card">
         <div class="pg-card-head"><div class="pg-card-title">Contributor Pipeline &amp; Strategic Outreach</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Help find and organize aligned organizations for outreach. Priorities include adding 15 organizations to the outreach tracker, performing ethics checks on each candidate, and drafting 5 outreach messages for sending review. Also includes contributor slot structure planning and intake flow improvement.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">Organization research, ethical vetting, outreach message writing, intake flow organization.</div>
+        <div class="pg-card-body">Adding aligned organizations to outreach trackers, conducting ethics checks, drafting messages, planning contributor role structures, refining intake flows, and moving interested people into active participation.</div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#strategic-outreach</div>
       </div>
 
-      <div class="pg-card" id="ws-social">
+      <!-- C. Social Media & Storytelling -->
+      <div class="pg-card">
         <div class="pg-card-head"><div class="pg-card-title">Social Media &amp; Storytelling</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Draft story ideas, reel hooks, video scripts, carousel graphics, and post ideas explaining Cioré's build journey, Lumé OS planning, accessibility research, and ethical sourcing values in accessible, plain language.</div>
-        <div class="pg-support-label">Contributor Fit</div>
+        <div class="pg-card-body">Creating post ideas, carousels, videos, newsletters, captions, and talking points covering hardware testing, Lumé OS planning, accessibility, ethical sourcing, repairability, and Cioré’s build journey.</div>
+        <div class="pg-support-label">Fit</div>
         <div class="pg-support-body">This may fit you if you enjoy storytelling, social media, content strategy, writing, video, design, or explaining complex work clearly.</div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#social-media</div>
       </div>
 
-      <div class="pg-card" id="ws-grants">
+      <!-- D. Grants & Funding Research -->
+      <div class="pg-card">
         <div class="pg-card-head"><div class="pg-card-title">Grants &amp; Funding Research</div><span class="pg-badge pg-badge-open">Open Support Need</span></div>
-        <div class="pg-card-body">Research grant databases and funding opportunities aligned with open-source tech, privacy, sustainability, and accessible hardware. Goal: identify and add 10 relevant grant opportunities to the tracking pipeline.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">Grant sorting, eligibility review, deadline tracking, summary notes.</div>
+        <div class="pg-card-body">Identifying and logging relevant grant opportunities, reviewing eligibility criteria, tracking deadlines, and maintaining the grant research pipeline.</div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#grant-research</div>
       </div>
 
-      <div class="pg-card" id="ws-suppliers">
+      <!-- E. Components & Supplier Research -->
+      <div class="pg-card">
         <div class="pg-card-head"><div class="pg-card-title">Components &amp; Supplier Research</div><span class="pg-badge pg-badge-progress">In Progress</span></div>
-        <div class="pg-card-body">Identify domestic and ethical component suppliers. Goals: find and log 10 supplier candidates, complete ethics reviews for 5 candidates, and prepare 3 to 5 supplier summaries for review.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">Supplier discovery, ethics check documentation, category checklists.</div>
+        <div class="pg-card-body">Finding and logging candidate suppliers, completing ethics and labor reviews, preparing supplier highlights for founder review, and comparing domestic sourcing options.</div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#components-suppliers</div>
       </div>
 
-      <div class="pg-card" id="ws-gaia">
-        <div class="pg-card-head"><div class="pg-card-title">Gaia Research &amp; AI Transparency</div><span class="pg-badge pg-badge-active">Active Research</span></div>
-        <div class="pg-card-body">Cioré is studying how Gaia could give users clearer visibility and more meaningful choices around AI-related activity inside apps. Work includes analyzing waitlist feedback on AI concerns, researching plain-language permission prompts, studying transparent notice patterns, and evaluating accessibility needs.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">UI prompt research, user question drafting, accessibility feedback analysis, privacy notice research.</div>
+      <!-- F. Gaia Research & AI Transparency -->
+      <div class="pg-card">
+        <div class="pg-card-head"><div class="pg-card-title">Gaia Research &amp; AI Transparency</div><span class="pg-badge pg-badge-progress">Active Research</span></div>
+        <div class="pg-card-body">Reviewing waitlist feedback on AI control, studying plain-language notices for app background activity, evaluating permission patterns, researching data concerns, and identifying visual/haptic/audio accessibility needs. Cioré is studying how Gaia could give users clearer visibility and more meaningful choices around AI-related activity inside apps.</div>
         <div class="pg-channel-label">Discord Channel</div>
-        <div class="pg-channel-body">#gaia-research</div>
+        <div class="pg-channel-body">#operating-system</div>
       </div>
 
-      <div class="pg-card" id="ws-testing">
-        <div class="pg-card-head"><div class="pg-card-title">V.0 Hardware Prototype Testing &amp; Feedback</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Document observations from V.0 hardware prototype testing. Evaluate grip comfort, one-handed reach, hand fatigue, physical button placement, case variations, and physical accessibility feedback.</div>
-        <div class="pg-support-label">Contributor Fit</div>
+      <!-- G. V.0 Hardware Prototype Testing & Feedback -->
+      <div class="pg-card">
+        <div class="pg-card-head"><div class="pg-card-title">V.0 Hardware Prototype Testing &amp; Feedback</div><span class="pg-badge pg-badge-progress">Testing</span></div>
+        <div class="pg-card-body">Documenting physical observations from V.0 prototype testing: comfort, grip, one-handed reach, fatigue, button placement, cases, and physical accessibility needs.</div>
+        <div class="pg-support-label">Fit</div>
         <div class="pg-support-body">This may fit you if you enjoy hands-on testing, product feedback, ergonomics, accessibility, documentation, or noticing details that affect everyday use.</div>
-        <div class="pg-channel-label">Discord Channel</div>
-        <div class="pg-channel-body">#hardware-testing</div>
-      </div>
-
-      <div class="pg-card" id="ws-ergonomics">
-        <div class="pg-card-head"><div class="pg-card-title">Ergonomics, Form Factor &amp; Accessibility Research</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Research alternative phone shapes, hand comfort profiles, button placement, low-vision accessibility, dyslexia-friendly typography, haptics, audio cues, and voice access. Help organize waitlist accessibility requests into a usable feature map.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">Ergonomic literature review, form factor ideation, accessibility feature mapping.</div>
-        <div class="pg-channel-label">Discord Channel</div>
-        <div class="pg-channel-body">#accessibility-ergonomics</div>
-      </div>
-
-      <div class="pg-card" id="ws-hardware-lab">
-        <div class="pg-card-head"><div class="pg-card-title">Hardware Lab, Electrical Planning &amp; Thermal Management</div><span class="pg-badge pg-badge-progress">Research Active</span></div>
-        <div class="pg-card-body">Contributors support hardware research, requirements organization, thermal management notes, stock device research, and measurement planning.
-        <div class="wb" style="margin-top:12px;margin-bottom:0;"><div class="wb-icon">&#9888;</div><div><strong>Safety Boundary Note:</strong> Contributors may support research, documentation, accessibility studies, user testing, requirements development, safe test-fixture learning, and measurement planning. Contributors must not independently design, validate, modify, or approve production battery systems, charging circuits, USB-C Power Delivery circuits, cellular radios, antennas, safety-critical PCBs, certification-critical hardware, carrier compliance decisions, or final safety and regulatory decisions.</div></div>
-        </div>
         <div class="pg-channel-label">Discord Channel</div>
         <div class="pg-channel-body">#hardware-lab</div>
       </div>
 
-      <div class="pg-card" id="ws-roadmap">
-        <div class="pg-card-head"><div class="pg-card-title">Roadmap, Operational Readiness &amp; Communication Planning</div><span class="pg-badge pg-badge-active">Active</span></div>
-        <div class="pg-card-body">Organize active priorities, sequence next steps, gather roadmap research notes, update contributor documentation, and identify aligned organizations for research partnerships.</div>
-        <div class="pg-support-label">Where Support Is Welcome</div>
-        <div class="pg-support-body">Priority sequencing, research summaries, contributor documentation maintenance.</div>
+      <!-- H. Ergonomics, Form Factor & Accessibility Research -->
+      <div class="pg-card">
+        <div class="pg-card-head"><div class="pg-card-title">Ergonomics, Form Factor &amp; Accessibility Research</div><span class="pg-badge pg-badge-active">Active</span></div>
+        <div class="pg-card-body">Researching alternative phone shapes, hand fatigue, physical controls, low vision needs, dyslexia-friendly design, motion sensitivity, haptics, audio feedback, and organizing waitlist requests into a feature map.</div>
         <div class="pg-channel-label">Discord Channel</div>
-        <div class="pg-channel-body">#operational-planning</div>
+        <div class="pg-channel-body">#hardware-lab</div>
       </div>
 
-    </div><!-- /p10 -->
+      <!-- I. Hardware Lab, Electrical Planning & Thermal Management -->
+      <div class="pg-card">
+        <div class="pg-card-head"><div class="pg-card-title">Hardware Lab, Electrical Planning &amp; Thermal Management</div><span class="pg-badge pg-badge-progress">Research</span></div>
+        <div class="pg-card-body">Supporting safe research, requirements organization, thermal management studies, stock device analysis, carrier questions, and measurement planning.</div>
+        <div class="wb" style="margin-top:10px;"><div class="wb-icon">&#9888;</div><div style="font-size:12px;">Contributors may support research, documentation, accessibility studies, user testing, requirements development, safe test-fixture learning, and measurement planning. Contributors must not independently design, validate, modify, or approve production battery systems, charging circuits, USB-C Power Delivery circuits, cellular radios, antennas, safety-critical PCBs, certification-critical hardware, carrier compliance decisions, or final safety and regulatory decisions.</div></div>
+        <div class="pg-channel-label">Discord Channel</div>
+        <div class="pg-channel-body">#hardware-lab</div>
+      </div>
 
+      <!-- J. Roadmap, Operational Readiness & Communication Planning -->
+      <div class="pg-card">
+        <div class="pg-card-head"><div class="pg-card-title">Roadmap, Operational Readiness &amp; Communication Planning</div><span class="pg-badge pg-badge-active">Active</span></div>
+        <div class="pg-card-body">Organizing active priorities, sequencing next steps, organizing planning notes, drafting contributor and waitlist updates, and mapping aligned brand research.</div>
+        <div class="pg-channel-label">Discord Channel</div>
+        <div class="pg-channel-body">#general-discussion</div>
+      </div>
+
+      <div style="height:60px"></div>
+    </div><!-- /p10 -->
 
     <div class="panel" id="p9">
       <h1 class="s-heading">Tips, Requests and Suggestions</h1>
-      <p class="s-intro">Use this form to share a tip, suggestion, request, workflow idea, or other non-project update directly with the founder. If your question is about a specific project, contact that project manager directly instead of using this form.</p>
+      <p class="s-intro">Use this form to share a tip, suggestion, request, workflow idea, or other non-project update directly with the founder.</p>
 
-      <div class="wb"><div class="wb-icon">&#9432;</div><div>Project-specific questions should go to the project manager listed on the What We Are Working On page. This form is for non-project submissions only.</div></div>
-
-      <div class="cat-label">What You Can Submit Here</div>
-      <div class="cg">
-        <div class="cc"><div class="cc-eye">Ideas</div><div class="cc-title">Share a Suggestion</div><div class="cc-body">Have a tip, workflow idea, or recommendation that could make things run better? This is the place to share it.</div></div>
-        <div class="cc"><div class="cc-eye">Support</div><div class="cc-title">Request Something</div><div class="cc-body">Need a recommendation letter, hour verification, or another kind of support from the founder? Submit it here.</div></div>
-        <div class="cc"><div class="cc-eye">Feedback</div><div class="cc-title">Send a Private Note</div><div class="cc-body">Have general feedback about the contributor experience, a concern, or something you want to flag quietly? You can submit anonymously if you prefer.</div></div>
-      </div>
-
-      <div class="pull">The founder reviews submissions every Friday and aims to address them within the following week. If more than a week passes without a response, feel free to message the founder directly on Discord.</div>
-
-      <div class="cat-label">Submit Your Tip, Request, or Suggestion</div>
       <div class="cf-form-wrap">
         <div class="cf-field">
           <label class="cf-label" for="tipType">Submission Type <span class="cf-req">*</span></label>
@@ -2529,7 +1803,6 @@ img { max-width: 100%; display: block; }
             <label class="cf-toggle-opt"><input type="radio" name="tipAnon" value="no" class="cf-radio" checked> No, include my details</label>
             <label class="cf-toggle-opt"><input type="radio" name="tipAnon" value="yes" class="cf-radio"> Yes, keep me anonymous</label>
           </div>
-          <div class="cf-helper">Anonymous submissions are welcome. Note that follow-up may not be possible without contact details.</div>
         </div>
         <div class="cf-field">
           <label class="cf-label" for="tipName">Your Name <span class="cf-req-soft">(skip if anonymous)</span></label>
@@ -2548,104 +1821,30 @@ img { max-width: 100%; display: block; }
         <div class="cf-success">
           <div class="cf-success-icon">&#10003;</div>
           <div class="cf-success-title">Received</div>
-          <div class="cf-success-body">Your submission has been sent to the founder. It will be reviewed and addressed within the week.</div>
+          <div class="cf-success-body">Your submission has been sent to the founder.</div>
           <button class="cf-reset-btn" id="tipReset">Submit Another</button>
         </div>
       </div>
-
     </div><!-- /p9 -->
 
     <div class="panel" id="pRES">
       <h1 class="s-heading">Research</h1>
-      <p class="s-intro">This page is where you can follow the research Cioré is doing as we build toward the phone and the operating system. Research here is real, sourced, and done in plain language. As the founder works through each topic, notes and findings are added here so the team can stay informed and contribute.</p>
-
-      <div class="cat-label">Why We Research Before We Build</div>
-      <p class="bt">Building a privacy-first phone means understanding what you are protecting people from. That requires studying how current phones actually work, what existing privacy systems do well, where the gaps are, and what is technically feasible for a company at our stage. This is not theoretical. Every research area here connects directly to a decision we will eventually make.</p>
-
-      <div class="cat-label">Current Research: AI and Privacy in 2026</div>
-      <p class="bt" style="margin-bottom:16px">Research date: May 29, 2026. This research covers what kinds of AI are actually running inside phones right now, how apps embed them, what data they touch, and what real user control looks like technically. The goal was to understand the landscape clearly enough to explain it in plain language and make good product decisions from it.</p>
-
-      <div class="pull">Main finding: The strongest opportunity is not just saying we value privacy. It is giving people clear control over AI: showing when apps use it, what data it touches, and what they can turn off, limit, or block. No competitor is doing this in plain language, at the OS level, for everyday users.</div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">What Kinds of AI Are Actually Inside Phones</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">Two types matter. On-device AI runs entirely on your phone's chip, nothing leaves. Cloud AI sends your data to a company's server, gets a result back, and returns it. Most privacy risk lives in that round trip. Generative AI (chatbots, image filters, voice assistants) is what most people think of, but predictive AI has been inside apps for over a decade, watching what you tap and how long you pause, mostly invisible. Android 16 now runs AI on notifications at the OS level before you even see them, turned on by default.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">How Apps Embed AI and What Data They Touch</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">App developers do not build AI from scratch. They drop in pre-built toolkits from Google, Meta, OpenAI, and others. Each toolkit has its own data collection rules that you never agreed to. An app can contain four or five of these toolkits simultaneously. The data these systems most commonly need includes voice and audio, photos, behavioral patterns like what you tap and how long you pause, and everything you type. The choice to use cloud AI is a business decision, not a technical requirement. Many apps use it because it is easier and cheaper, not because it is the only option.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">What Existing Privacy Operating Systems Do and Where They Stop</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">GrapheneOS has the strongest security and the most rigorous sandboxing. CalyxOS balances usability with solid protection. Murena is the most mainstream-friendly and closest to what Cioré is building for. Purism is a cautionary example of overpromising on delivery. The gap all of them share: none of them have a product story, a feature, or plain-language communication specifically about AI inside apps. That conversation has been left entirely on the table. Cioré is entering a market that has not addressed what users are actually asking about right now.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">Technical Possibilities for Detecting AI in Apps</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">Two methods exist. Static scanning reads the app file before it runs and looks for known AI toolkit signatures. A French nonprofit called Exodus Privacy already does this for tracking toolkits and is actively maintained. Network monitoring watches what an app connects to while running. Known AI services have recognizable web addresses, and tools like TrackerControl can already see these connections, they just do not label them as AI for regular users. The hardest problem is translation. Vague warnings get ignored. Specific, plain-language labels change behavior. Research from Carnegie Mellon confirmed this: specificity works, generic warnings do not.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">What Real User Control Actually Means Technically</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">Controls range from strong to symbolic. Cutting an app's network access entirely is the strongest: if it cannot reach a server, it cannot send your data there. Blocking specific server addresses is also strong and more surgical. Permission revocation is medium strength because it stops new collection but not use of data already collected. Privacy policy opt-outs are the weakest because they rely on the company's honesty and have no technical enforcement. Cioré's goal is to give users real valves, not the appearance of valves.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">The Legal Landscape in 2026</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">The EU AI Act is the most important regulation currently in effect. Since February 2025, certain AI practices are banned in the EU including social scoring and manipulation below user awareness. Starting August 2026, any AI system that interacts with users must disclose it is AI. AI-generated content must be labeled. These requirements apply to any company whose product is used in the EU, regardless of where the company is based. Cioré's planned approach of surfacing AI activity to users is aligned with where this regulation is going. Opt-in is also becoming law: several jurisdictions are moving toward requiring AI features to be off by default.</div>
-      </div>
-
-      <div class="pg-card">
-        <div class="pg-card-head"><div class="pg-card-title">The Competitive Landscape and Where Cioré Fits</div><span class="pg-badge pg-badge-progress">Researched</span></div>
-        <div class="pg-card-body">The privacy phone market exists and is real, but it is built for technically sophisticated users. Most people cannot complete the setup process for GrapheneOS. CalyxOS is easier but still requires manual setup. Murena is the closest to a mainstream product. Nobody in this market is specifically positioned around AI. The entire conversation about AI inside apps has been left open. Cioré's opportunity is combining solid technical protection with communication and usability that works for everyday people, not just developers and journalists.</div>
-      </div>
-
-      <div class="cat-label">Key Phrases From the Research</div>
-      <div class="pull">On-device AI is like a calculator built into your phone. It thinks for itself. Nothing leaves. Cloud AI is like calling someone at a company, reading them everything you just did, having them figure it out, and telling you the answer. That call is the privacy risk.</div>
-
-      <div class="cg" style="margin-top:20px">
-        <div class="cc"><div class="cc-eye green">Plain Language</div><div class="cc-title">Your free app has four companies inside it that you never hired.</div><div class="cc-body">This is how we explain third-party AI toolkits embedded in apps without using technical terms.</div></div>
-        <div class="cc"><div class="cc-eye green">Plain Language</div><div class="cc-title">Apps are allowed to write their own privacy report. We actually check.</div><div class="cc-body">Research on 1.4 million apps found that what apps claimed they collected did not match what they actually did. Detection-based labeling is more reliable than self-reporting.</div></div>
-        <div class="cc"><div class="cc-eye green">Plain Language</div><div class="cc-title">Existing privacy phones were built for security experts. We built ours for everyone else.</div><div class="cc-body">The usability gap is the largest available market in this space and it is almost entirely unserved.</div></div>
-        <div class="cc"><div class="cc-eye green">Our Stance</div><div class="cc-title">We are not against AI. We are against AI you did not ask for.</div><div class="cc-body">This is the honest, grounded position. We use tools. Our community uses tools. The issue is consent, visibility, and control.</div></div>
-      </div>
-
-      <div class="cat-label">Research Sources</div>
-      <p class="bt" style="margin-bottom:12px">All findings above are grounded in published, dated research. Key sources include:</p>
-      <ul class="dl">
-        <li>Android Authority and TechCrunch: Android 16 AI features and defaults (December 2025)</li>
-        <li>Google Android Developer Docs: On-device vs. cloud AI guidance (2026)</li>
-        <li>Exodus Privacy: Android APK tracker and SDK scanning (actively maintained, March 2026)</li>
-        <li>Carnegie Mellon CyLab: Apple privacy label accuracy research (2022 through 2024)</li>
-        <li>Latham and Watkins: EU AI Act update and enforcement timeline (May 2026)</li>
-        <li>Factually: Privacy phone and de-Googled device comparisons (April and May 2026)</li>
-        <li>TrackerControl and NetGuard: Network-level app monitoring documentation</li>
-        <li>IntelTechniques: GrapheneOS 2026 settings and permission model (January 2026)</li>
-      </ul>
-
-      <div class="cat-label">What Comes Next</div>
-      <p class="bt">As more research is completed, this page will be updated. Upcoming research areas include hardware component research, supplier landscape, OS kernel research for Lumé, and user research on what our waitlist community actually wants to see and control on their phone. If you have a research background and want to contribute to any of these areas, reach out on Discord or check the Working On Now page for open research workstreams.</p>
-
+      <p class="s-intro">This page is where you can follow the research Cioré is doing as we build toward the phone and the operating system.</p>
+      <div class="cat-label">AI and Privacy Research Notes</div>
+      <p class="bt">Ongoing research covers on-device vs cloud processing, app permission boundaries, plain-language notices, and EU AI regulation frameworks.</p>
+      <div style="height:60px"></div>
     </div><!-- /pRES -->
 
     <div class="panel" id="pCD">
       <h1 class="s-heading">Contributor Directory</h1>
-      <p class="s-intro">See who is working with Cioré, what they are focused on, and what skills or knowledge they are open to sharing. Use this directory to find collaborators, learn from others, or simply get to know the team.</p>
-
+      <p class="s-intro">See who is working with Cioré, what they are focused on, and what skills or knowledge they are open to sharing.</p>
       <div class="cd-how-note">
         <span class="cd-how-note-icon">&#9432;</span>
-        <div>Only contributors marked <strong>Active</strong> in the backend appear here. New submissions enter a review state before becoming visible, which keeps the directory accurate and trustworthy.</div>
+        <div>Only contributors marked <strong>Active</strong> in the backend appear here.</div>
       </div>
 
-      <div class="cat-label">Active Contributors</div>
-
       <div id="cdStats" style="display:none" class="cd-stats" style="margin-bottom:16px">
-        <div class="cd-stat">
-          <div class="cd-stat-num" id="cdCount">0</div>
-          <div class="cd-stat-label">Active Contributors</div>
-        </div>
+        <div class="cd-stat"><div class="cd-stat-num" id="cdCount">0</div><div class="cd-stat-label">Active Contributors</div></div>
       </div>
 
       <div class="cd-controls" id="cdControls" style="display:none">
@@ -2654,183 +1853,25 @@ img { max-width: 100%; display: block; }
         <span class="cd-count-label" id="cdResultCount"></span>
       </div>
 
-      <div id="cdLoading" class="cd-state">
-        <div class="cd-spinner"></div>
-        <div class="cd-state-title">Loading Directory</div>
-        <div class="cd-state-body">Fetching contributor data.</div>
-      </div>
-
-      <div id="cdError" class="cd-state" style="display:none">
-        <div class="cd-state-icon">&#9888;</div>
-        <div class="cd-state-title">Could Not Load</div>
-        <div class="cd-state-body">We are having trouble loading the directory right now. Please try again later or reach out to the team directly.</div>
-      </div>
-
-      <div id="cdEmpty" class="cd-state" style="display:none">
-        <div class="cd-state-icon">&#9670;</div>
-        <div class="cd-state-title">No Active Contributors Yet</div>
-        <div class="cd-state-body">Once contributors are approved and marked Active, they will appear here. Check back soon.</div>
-      </div>
-
-      <div id="cdNoResults" class="cd-state" style="display:none">
-        <div class="cd-state-title">No Results</div>
-        <div class="cd-state-body">No contributors match your current search or filter. Try adjusting your terms.</div>
-      </div>
-
+      <div id="cdLoading" class="cd-state"><div class="cd-spinner"></div><div class="cd-state-title">Loading Directory</div></div>
+      <div id="cdError" class="cd-state" style="display:none"><div class="cd-state-icon">&#9888;</div><div class="cd-state-title">Could Not Load</div></div>
+      <div id="cdEmpty" class="cd-state" style="display:none"><div class="cd-state-title">No Active Contributors Yet</div></div>
+      <div id="cdNoResults" class="cd-state" style="display:none"><div class="cd-state-title">No Results</div></div>
       <div id="cdGrid" class="cd-grid" style="display:none"></div>
-
     </div><!-- /pCD -->
 
-<div class="panel" id="pAP">
+    <div class="panel" id="pAP">
+      <h1 class="s-heading">Admin Portal</h1>
+      <button onclick="openCM()" style="margin-bottom:8px;padding:10px 22px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-family:var(--f-ui);font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;">Open Contributor Manager</button>
+      <div class="s-intro">Review pending contributor submissions and manage directory visibility.</div>
 
-      <div class="s-heading">Admin Portal</div>
-      <button onclick="openCM()" style="margin-bottom:8px;padding:10px 22px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-family:var(--f-ui);font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.16s" onmouseover="this.style.background='var(--green-2)'" onmouseout="this.style.background='var(--green)'">Open Contributor Manager</button>
-      <div class="s-intro">Review pending contributor submissions, manage contributor records, assign credentials, and control directory visibility. Edits update the in-page contributor dataset immediately. Backend sync via Apps Script will be connected in a later phase.</div>
-
-      <div class="ap-preview-note">
-        <span class="ap-preview-icon">⚙</span>
-        All edits update the shared in-page contributor dataset. Apps Script sync will be connected in a later phase.
-      </div>
-
-      <!-- ─── PENDING REQUESTS ─── -->
-      <div class="cat-label" id="ap-pending-label">Pending Requests <span class="ap-count-badge" id="apPendingCount">4</span></div>
-
-      <p class="bt">These submissions are waiting for your review. Approve a person to move them into Contributor Records and optionally show them in the public directory.</p>
-
+      <div class="cat-label" id="ap-pending-label">Pending Requests <span class="ap-count-badge" id="apPendingCount">0</span></div>
       <div id="apPendingList" class="ap-request-list"></div>
 
-      <!-- ─── CONTRIBUTOR RECORDS ─── -->
       <div class="cat-label" style="margin-top:48px">Contributor Records <span class="ap-count-badge ap-count-badge-green" id="apRecordsCount">0</span></div>
-
-      <p class="bt">All contributors who have been reviewed. Click Edit to open their full record in the editor below. Approved contributors set to Show will appear in the public directory.</p>
-
-      <div id="apRecordsList" class="ap-records-list">
-        <div class="ap-empty-note">No approved records yet. Approve a pending request above to add someone here.</div>
-      </div>
-
-      <!-- ─── RECORD EDITOR ─── -->
-      <div class="cat-label" style="margin-top:48px">Record Editor</div>
-      <p class="bt" id="apEditorIntro">Select a contributor from Pending Requests or Contributor Records to open their record here for editing.</p>
-
-      <div id="apEditor" style="display:none" class="ap-editor-wrap">
-
-        <div class="ap-editor-head">
-          <span id="apEditorTitle">Editing Contributor</span>
-          <button class="ap-btn ap-btn-ghost ap-editor-close" onclick="apCloseEditor()">✕ Close</button>
-        </div>
-
-        <div class="ap-editor-grid">
-
-          <div class="ap-editor-section">
-            <div class="ap-editor-section-label">Contributor Info</div>
-
-            <div class="ap-ef-row">
-              <div class="ap-ef">
-                <label class="ap-ef-label">First Name</label>
-                <input type="text" class="ap-ef-input" id="edFirst" placeholder="First name">
-              </div>
-              <div class="ap-ef">
-                <label class="ap-ef-label">Last Name</label>
-                <input type="text" class="ap-ef-input" id="edLast" placeholder="Last name">
-              </div>
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Role</label>
-              <input type="text" class="ap-ef-input" id="edRole" placeholder="e.g. UX Designer, Backend Engineer">
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Skills</label>
-              <textarea class="ap-ef-textarea" id="edSkills" rows="2" placeholder="Comma-separated skills"></textarea>
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Interested In Learning</label>
-              <textarea class="ap-ef-textarea" id="edLearn" rows="2" placeholder="What they want to learn"></textarea>
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Resources They Can Share</label>
-              <textarea class="ap-ef-textarea" id="edShare" rows="2" placeholder="Tools, templates, contacts…"></textarea>
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Email <span class="ap-ef-private">(admin only, never shown publicly)</span></label>
-              <input type="email" class="ap-ef-input" id="edEmail" placeholder="email@address.com">
-            </div>
-          </div>
-
-          <div class="ap-editor-section">
-            <div class="ap-editor-section-label">Credentials</div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Username</label>
-              <input type="text" class="ap-ef-input" id="edUsername" placeholder="e.g. maya.chen">
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Temporary Password</label>
-              <input type="text" class="ap-ef-input" id="edPassword" placeholder="Assign a temp password">
-              <div class="ap-ef-helper">Communicate credentials to the contributor via email or Discord.</div>
-            </div>
-
-            <div class="ap-editor-section-label" style="margin-top:24px">Access Controls</div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Status</label>
-              <div class="ap-toggle-row">
-                <button class="ap-toggle-btn ap-toggle-active" id="edStatusActive" onclick="apSetStatus('Active')">Active</button>
-                <button class="ap-toggle-btn" id="edStatusInactive" onclick="apSetStatus('Inactive')">Inactive</button>
-                <button class="ap-toggle-btn ap-toggle-away" id="edStatusAway" onclick="apSetStatus('Away')">Away / Paused</button>
-              </div>
-              <div class="ap-ef-helper">Away keeps the record in admin but hides the contributor from the public directory until reactivated.</div>
-            </div>
-
-            <div class="ap-ef">
-              <label class="ap-ef-label">Directory Visibility</label>
-              <div class="ap-toggle-row">
-                <button class="ap-toggle-btn ap-toggle-active" id="edDirShow" onclick="apSetDir('Show')">Show in Directory</button>
-                <button class="ap-toggle-btn" id="edDirHide" onclick="apSetDir('Hide')">Hide</button>
-              </div>
-              <div class="ap-ef-helper">Only contributors who are Active AND set to Show will appear publicly. Email is never shown.</div>
-            </div>
-
-            <div class="ap-editor-actions">
-              <button class="ap-btn ap-btn-approve" id="edApproveBtn" onclick="apEditorApprove()">Approve &amp; Save</button>
-              <button class="ap-btn" onclick="apEditorSave()">Save Changes</button>
-              <button class="ap-btn ap-btn-inactive" onclick="apEditorMarkInactive()">Mark Inactive</button>
-            </div>
-
-            <div class="ap-editor-saved" id="apEditorSaved" style="display:none">
-              ✓ Changes saved to page state
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /apEditor -->
-
-      <!-- ─── RECENT ACTIVITY ─── -->
-      <div class="cat-label" style="margin-top:48px">Recent Activity</div>
-
-      <div class="ap-table-wrap">
-        <table class="ap-table" id="apActivityTable">
-          <thead>
-            <tr><th>Who</th><th>Action</th><th>When</th><th>Source</th></tr>
-          </thead>
-          <tbody id="apActivityBody">
-            <tr>
-              <td>admin</td>
-              <td><span class="ap-badge ap-badge-review">Admin Login</span></td>
-              <td>Today</td>
-              <td> </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div id="apRecordsList" class="ap-records-list"></div>
 
       <div style="height:60px"></div>
-
     </div><!-- /pAP -->
 
     </div><!-- /cx -->
@@ -2850,8 +1891,7 @@ img { max-width: 100%; display: block; }
   </main>
 </div><!-- /app -->
 
-
-<!-- SUBMISSION OVERLAY (gate-level, no hub access) -->
+<!-- SUBMISSION OVERLAY -->
 <div id="submissionOverlay" aria-modal="true" role="dialog" aria-label="Contributor Access Request">
   <div class="sub-overlay-box">
     <div class="sub-overlay-head">
@@ -2862,7 +1902,7 @@ img { max-width: 100%; display: block; }
       <button class="sub-overlay-close" id="subOverlayClose" aria-label="Close">&#x2715;</button>
     </div>
     <div class="sub-overlay-body">
-      <p class="sub-overlay-intro">This form is for requesting access to the Contributor Hub. Submitting this form does not give you immediate access. Once your request is reviewed and approved, the founder will assign your personal access code and send it to you by email. You will use that code to log in.</p>
+      <p class="sub-overlay-intro">Request access to the Contributor Hub. Submitting this form does not give immediate access; approved requests receive a personal access code by email.</p>
 
       <div id="subFormView">
         <iframe name="subTarget" id="subTarget" style="display:none" aria-hidden="true"></iframe>
@@ -2882,26 +1922,22 @@ img { max-width: 100%; display: block; }
           </div>
           <div class="cf-field">
             <label class="cf-label" for="subRole">Role <span class="cf-req">*</span></label>
-            <input type="text" class="cf-input" id="subRole" name="role" placeholder="e.g. UX Designer, Developer, Content Strategist">
+            <input type="text" class="cf-input" id="subRole" name="role" placeholder="e.g. UX Designer, Developer">
           </div>
-
           <div class="cf-field">
             <label class="cf-label" for="subSkills">Skills</label>
-            <textarea class="cf-textarea" id="subSkills" name="skills" rows="2" placeholder="e.g. coding, design, storytelling, hardware..."></textarea>
+            <textarea class="cf-textarea" id="subSkills" name="skills" rows="2" placeholder="Coding, design, storytelling..."></textarea>
           </div>
           <div class="cf-field">
             <label class="cf-label" for="subLearn">Interested In Learning</label>
-            <textarea class="cf-textarea" id="subLearn" name="interestedInLearning" rows="2" placeholder="What are you hoping to grow in?"></textarea>
+            <textarea class="cf-textarea" id="subLearn" name="interestedInLearning" rows="2"></textarea>
           </div>
           <div class="cf-field">
             <label class="cf-label" for="subShare">Resources I Can Share</label>
-            <textarea class="cf-textarea" id="subShare" name="resourcesCanShare" rows="2" placeholder="Tools, contacts, or knowledge you can contribute..."></textarea>
+            <textarea class="cf-textarea" id="subShare" name="resourcesCanShare" rows="2"></textarea>
           </div>
-          <div class="cf-field" style="margin-top:20px;margin-bottom:0">
-            <button type="submit" class="cf-submit-btn" id="subSubmitBtn">
-              <span id="subBtnText">Request Access</span>
-            </button>
-            <div class="cf-helper" style="margin-top:8px">Submitting this form does not unlock the hub. Access is granted separately after review and approval.</div>
+          <div class="cf-field" style="margin-top:20px;">
+            <button type="submit" class="cf-submit-btn" id="subSubmitBtn"><span id="subBtnText">Request Access</span></button>
           </div>
         </form>
       </div>
@@ -2910,27 +1946,16 @@ img { max-width: 100%; display: block; }
         <div class="cf-success">
           <div class="cf-success-icon">&#10003;</div>
           <div class="cf-success-title">Request Received</div>
-          <div class="cf-success-body">Thank you for submitting your access request. The founder will review it and follow up by email. If approved, you will receive your personal access code by email along with instructions to access the hub.</div>
           <button class="cf-reset-btn" id="subCloseSuccess">Close</button>
-        </div>
-      </div>
-
-      <div id="subError" style="display:none">
-        <div class="cf-error-state">
-          <div class="cf-error-state-icon">!</div>
-          <div class="cf-error-state-title">Submission Failed</div>
-          <div class="cf-error-state-body">Something went wrong. Please try again or contact the founder directly.</div>
-          <button class="cf-reset-btn" id="subRetry">Try Again</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- CONTRIBUTOR MANAGER MODAL -->
 <div id="cmOverlay">
   <div id="cmPanel">
-
     <div class="cm-header">
       <div class="cm-brand">
         <div class="cm-wordmark">Cioré</div>
@@ -2938,31 +1963,23 @@ img { max-width: 100%; display: block; }
       </div>
       <button class="cm-close" onclick="closeCM()" aria-label="Close">&times;</button>
     </div>
-
     <div class="cm-tabs">
-      <div class="cm-tab" id="cmTab-pending" onclick="cmSwitchTab('pending')">
-        Pending <span class="cm-tab-badge" id="cmBadgePending">0</span>
-      </div>
+      <div class="cm-tab" id="cmTab-pending" onclick="cmSwitchTab('pending')">Pending <span class="cm-tab-badge" id="cmBadgePending">0</span></div>
       <div class="cm-tab" id="cmTab-active" onclick="cmSwitchTab('active')">Active</div>
       <div class="cm-tab cm-active" id="cmTab-all" onclick="cmSwitchTab('all')">All</div>
     </div>
-
     <div class="cm-toolbar">
       <input class="cm-search" id="cmSearch" type="text" placeholder="Search by name or role&#8230;" oninput="cmRender()">
       <button class="cm-refresh-btn" id="cmRefreshBtn" onclick="cmLoad()">Refresh</button>
     </div>
-
     <div class="cm-stats">
-      <div class="cm-stat s-gold" ><div class="cm-stat-num" id="cmStatSub">&#8212;</div><div class="cm-stat-label">Pending</div></div>
+      <div class="cm-stat s-gold"><div class="cm-stat-num" id="cmStatSub">&#8212;</div><div class="cm-stat-label">Pending</div></div>
       <div class="cm-stat s-green"><div class="cm-stat-num" id="cmStatAct">&#8212;</div><div class="cm-stat-label">Active</div></div>
       <div class="cm-stat s-slate"><div class="cm-stat-num" id="cmStatIna">&#8212;</div><div class="cm-stat-label">Inactive</div></div>
-      <div class="cm-stat s-red"  ><div class="cm-stat-num" id="cmStatTot">&#8212;</div><div class="cm-stat-label">Total</div></div>
+      <div class="cm-stat s-red"><div class="cm-stat-num" id="cmStatTot">&#8212;</div><div class="cm-stat-label">Total</div></div>
     </div>
-
     <div class="cm-body" style="position:relative">
-      <div class="cm-tab-panel" id="cmPanel-pending">
-        <div id="cmList-pending"></div>
-      </div>
+      <div class="cm-tab-panel" id="cmPanel-pending"><div id="cmList-pending"></div></div>
       <div class="cm-tab-panel" id="cmPanel-active"><div id="cmList-active"></div></div>
       <div class="cm-tab-panel cm-active" id="cmPanel-all">
         <div class="cm-loading" id="cmLoading"><div class="cm-spinner"></div>Loading contributors&#8230;</div>
@@ -2970,14 +1987,11 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="cm-toast" id="cmToast"></div>
     </div>
-
   </div>
 </div>
 
-<script>const DIRECTORY_API_URL = 'https://script.google.com/macros/s/AKfycbxUtcJ4k4rlGMNhBZwjdv2x2kT4r1bcznV-8YqAQgKA0tS9jnjp-O2QSV0MdpcdHRtJ/exec';
-
-/* ─── PASSWORD ─── */
-// Auth is handled by the Admin System IIFE below.
+<script>
+const DIRECTORY_API_URL = 'https://script.google.com/macros/s/AKfycbxUtcJ4k4rlGMNhBZwjdv2x2kT4r1bcznV-8YqAQgKA0tS9jnjp-O2QSV0MdpcdHRtJ/exec';
 
 async function logAccess() {
   let ip = 'unavailable';
@@ -2994,18 +2008,9 @@ async function logAccess() {
   localStorage.setItem('ciore_log', JSON.stringify(logs));
 }
 
-function tryUnlock() {
-  // Replaced by Admin System IIFE — see below
-}
-
-// Central navigation — defined globally so IIFEs and inline handlers can call it
 window.navigateTo = function(pid) {
-  document.querySelectorAll('.nav-item').forEach(function(el) {
-    el.classList.remove('active');
-  });
-  document.querySelectorAll('.panel').forEach(function(el) {
-    el.classList.remove('active');
-  });
+  document.querySelectorAll('.nav-item').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.panel').forEach(function(el) { el.classList.remove('active'); });
   var navItem = document.querySelector('.nav-item[data-panel="' + pid + '"]');
   if (navItem) navItem.classList.add('active');
   var panel = document.getElementById(pid);
@@ -3022,11 +2027,7 @@ window.navigateTo = function(pid) {
   }
 };
 
-// All DOM-dependent listeners wrapped in DOMContentLoaded
-// so they never run before their elements exist
 document.addEventListener('DOMContentLoaded', function() {
-
-  /* ─── GATE BUTTON & ENTER KEY ─── */
   (function() {
     var gateBtn    = document.getElementById('gateBtn');
     var pwUsername = document.getElementById('pwUsername');
@@ -3034,8 +2035,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pwUsername) pwUsername.addEventListener('keydown', function(e) { if (e.key === 'Enter' && window.tryUnlock) window.tryUnlock(); });
   })();
 
-  /* ─── LOGOUT ─── */
-  /* ─── TIPS FORM ─── */
   (function() {
     var tipBtn      = document.getElementById('tipSubmitBtn');
     var tipBtnText  = document.getElementById('tipBtnText');
@@ -3093,7 +2092,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })();
 
-    var logoutBtn = document.getElementById('logoutBtn');
+  var logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) logoutBtn.addEventListener('click', function() {
     var app   = document.getElementById('app');
     var gate  = document.getElementById('gate');
@@ -3104,7 +2103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (drawer) drawer.classList.remove('open');
   });
 
-  /* ─── SIDEBAR NAV ─── */
   var sNav = document.getElementById('sNav');
   if (sNav) sNav.addEventListener('click', function(e) {
     var item = e.target.closest('.nav-item');
@@ -3112,7 +2110,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.navigateTo(item.dataset.panel);
   });
 
-  /* ─── ACCESS LOG BUTTON ─── */
   var logBtn = document.getElementById('logBtn');
   if (logBtn) logBtn.addEventListener('click', function() {
     renderLog();
@@ -3120,21 +2117,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (drawer) drawer.classList.toggle('open');
   });
 
-  /* ─── LOG DRAWER CLOSE ─── */
   var ldClose = document.getElementById('ldClose');
   if (ldClose) ldClose.addEventListener('click', function() {
     var drawer = document.getElementById('log-drawer');
     if (drawer) drawer.classList.remove('open');
   });
 
-  /* ─── HOME CARDS / QUICK LINKS (data-dest) ─── */
   document.addEventListener('click', function(e) {
     var el = e.target.closest('[data-dest]');
     if (!el) return;
     window.navigateTo(el.dataset.dest);
   });
 
-  /* ─── MOBILE MENU ─── */
   var mobileBtn = document.getElementById('mobileMenuBtn');
   var sidebar   = document.getElementById('sidebar');
   var sidebarOv = document.getElementById('sidebarOverlay');
@@ -3150,63 +2144,8 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = '';
     });
   }
+});
 
-}); // end DOMContentLoaded
-
-// Home panel widget wiring
-(function() {
-  // Directory search shortcut — go to pCD with search pre-filled
-  var dirSearchInput = document.getElementById('phDirSearch');
-  var dirSearchBtn   = document.getElementById('phDirSearchBtn');
-  if (dirSearchBtn) {
-    dirSearchBtn.addEventListener('click', function() {
-      var q = dirSearchInput ? dirSearchInput.value.trim() : '';
-      window.navigateTo('pCD');
-      if (q) {
-        setTimeout(function() {
-          var cdSearch = document.getElementById('cdSearch');
-          if (cdSearch) { cdSearch.value = q; cdSearch.dispatchEvent(new Event('input')); }
-        }, 60);
-      }
-    });
-  }
-  if (dirSearchInput) {
-    dirSearchInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') dirSearchBtn && dirSearchBtn.click();
-    });
-  }
-
-  // Update contributor count on home when directory loads
-  var origRefresh = window._cioreRefreshDirectory;
-  window._cioreRefreshDirectory = function() {
-    if (origRefresh) origRefresh();
-    var countEl = document.getElementById('phContribCount');
-    if (countEl && window._cioreAllContributors) {
-      countEl.textContent = window._cioreAllContributors.length || '&mdash;';
-    }
-  };
-})();
-
-// Mobile menu
-(function() {
-  var btn = document.getElementById('mobileMenuBtn');
-  var sb  = document.getElementById('sidebar');
-  var ov  = document.getElementById('sidebarOverlay');
-  if (btn && sb && ov) {
-    btn.addEventListener('click', function() {
-      sb.classList.add('mobile-open');
-      ov.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    });
-    ov.addEventListener('click', function() {
-      sb.classList.remove('mobile-open');
-      ov.classList.remove('show');
-      document.body.style.overflow = '';
-    });
-  }
-})();
-
-/* ─── ACCESS LOG ─── */
 function renderLog() {
   let logs = [];
   try { logs = JSON.parse(localStorage.getItem('ciore_log') || '[]'); } catch(e) {}
@@ -3222,8 +2161,6 @@ function renderLog() {
     </div>
   `).join('');
 }
-
-/* ─── SHARED HELPERS ─── */
 
 function safe(v) { return v === null || v === undefined ? '' : String(v).trim(); }
 
@@ -3270,22 +2207,21 @@ function isPubliclyVisible(n) {
   return sid !== 'no' && sid !== 'false' && sid !== 'hide' && sid !== '0';
 }
 
-/* ─── CONTRIBUTOR DIRECTORY — pCD ─── */
 (function() {
   let allContributors = [];
   let directoryLoaded = false;
 
-  const elStats      = document.getElementById('cdStats');
-  const elCount      = document.getElementById('cdCount');
-  const elControls   = document.getElementById('cdControls');
-  const elSearch     = document.getElementById('cdSearch');
-  const elRoleFilter = document.getElementById('cdRoleFilter');
+  const elStats       = document.getElementById('cdStats');
+  const elCount       = document.getElementById('cdCount');
+  const elControls    = document.getElementById('cdControls');
+  const elSearch      = document.getElementById('cdSearch');
+  const elRoleFilter  = document.getElementById('cdRoleFilter');
   const elResultCount = document.getElementById('cdResultCount');
-  const elLoading    = document.getElementById('cdLoading');
-  const elError      = document.getElementById('cdError');
-  const elEmpty      = document.getElementById('cdEmpty');
-  const elNoResults  = document.getElementById('cdNoResults');
-  const elGrid       = document.getElementById('cdGrid');
+  const elLoading     = document.getElementById('cdLoading');
+  const elError       = document.getElementById('cdError');
+  const elEmpty       = document.getElementById('cdEmpty');
+  const elNoResults   = document.getElementById('cdNoResults');
+  const elGrid        = document.getElementById('cdGrid');
 
   function initials(first, last) {
     return ((first || '').charAt(0) + (last || '').charAt(0)).toUpperCase() || '?';
@@ -3303,9 +2239,7 @@ function isPubliclyVisible(n) {
     const role  = n.Role;
     return '<div class="cd-card">' +
       '<div class="cd-card-head">' +
-        '<div>' +
-          '<div class="cd-avatar">' + initials(first, last) + '</div>' +
-        '</div>' +
+        '<div><div class="cd-avatar">' + initials(first, last) + '</div></div>' +
         '<div style="flex:1;min-width:0">' +
           '<div class="cd-name">' + (first ? first + ' ' + last : 'Unnamed') + '</div>' +
           '<div class="cd-role-text">' + (role || '—') + '</div>' +
@@ -3344,101 +2278,58 @@ function isPubliclyVisible(n) {
       return true;
     });
 
-    elResultCount.textContent = filtered.length + ' contributor' + (filtered.length !== 1 ? 's' : '');
+    if (elResultCount) elResultCount.textContent = filtered.length + ' contributor' + (filtered.length !== 1 ? 's' : '');
 
-    elEmpty.style.display     = 'none';
-    elNoResults.style.display = 'none';
-    elGrid.style.display      = 'none';
+    if (elEmpty) elEmpty.style.display     = 'none';
+    if (elNoResults) elNoResults.style.display = 'none';
+    if (elGrid) elGrid.style.display      = 'none';
 
     if (!allContributors.length) {
-      elEmpty.style.display = 'block';
+      if (elEmpty) elEmpty.style.display = 'block';
     } else if (!filtered.length) {
-      elNoResults.style.display = 'block';
-    } else {
+      if (elNoResults) elNoResults.style.display = 'block';
+    } else if (elGrid) {
       elGrid.style.display = 'grid';
       elGrid.innerHTML = filtered.map(renderCard).join('');
     }
   }
 
-  function showDirLoading() {
-    elLoading.style.display   = 'block';
-    elError.style.display     = 'none';
-    elEmpty.style.display     = 'none';
-    elNoResults.style.display = 'none';
-    elGrid.style.display      = 'none';
-    elStats.style.display     = 'none';
-    elControls.style.display  = 'none';
-  }
-
-  function showDirError() {
-    elLoading.style.display   = 'none';
-    elError.style.display     = 'block';
-    elStats.style.display     = 'none';
-    elControls.style.display  = 'none';
-  }
-
-  function showDirReady() {
-    elLoading.style.display   = 'none';
-    elError.style.display     = 'none';
-    elStats.style.display     = 'flex';
-    elControls.style.display  = 'flex';
-  }
-
-  async function loadDirectory() {
+  window.loadDirectory = async function() {
     if (directoryLoaded) return;
-    showDirLoading();
+    if (elLoading) elLoading.style.display = 'block';
     try {
       const res  = await fetch(DIRECTORY_API_URL);
       const raw  = await res.json();
-
       const rows = extractContributors(raw);
       const allNorm = rows.map(function(r, i) { return normalizeContributorRecord(r, i); });
 
       allContributors = allNorm.filter(isPubliclyVisible);
+      window._cioreAllContributors = allContributors;
 
-      window._cioreAllContributors    = allContributors;
-      window._cioreAllContributorsRaw = allNorm;
       var _countEl = document.getElementById('phContribCount');
       if (_countEl) _countEl.textContent = allContributors.length;
 
-      if (window._cioreImportFromAppsScript) {
-        window._cioreImportFromAppsScript(allNorm);
-      }
-
       directoryLoaded = true;
-      elCount.textContent = allContributors.length;
+      if (elLoading) elLoading.style.display = 'none';
+      if (elStats) elStats.style.display = 'flex';
+      if (elControls) elControls.style.display = 'flex';
+      if (elCount) elCount.textContent = allContributors.length;
       buildRoleFilter(allContributors);
-      showDirReady();
       applyFilters();
     } catch (err) {
-      console.error('[Cioré Directory] Load error:', err);
-      showDirError();
+      if (elLoading) elLoading.style.display = 'none';
+      if (elError) elError.style.display = 'block';
     }
-  }
+  };
 
   if (elSearch)     elSearch.addEventListener('input',  applyFilters);
   if (elRoleFilter) elRoleFilter.addEventListener('change', applyFilters);
-
-  document.getElementById('sNav').addEventListener('click', function(e) {
-    const item = e.target.closest('.nav-item');
-    if (item && item.dataset.panel === 'pCD') {
-      setTimeout(loadDirectory, 40);
-    }
-  });
 })();
 
-/* ─── ADMIN SYSTEM ─── */
 (function() {
-
   let currentRole = 'contributor';
-  let editingIdx  = -1;
-
   let pendingRecords  = [];
   let approvedRecords = [];
-
-  window._cioreApprovedRecords  = approvedRecords;
-  window._ciorePendingRecords   = pendingRecords;
-  window._cioreRefreshDirectory = refreshPublicDirectory;
 
   window.tryUnlock = function() {
     var el   = document.getElementById('pwUsername');
@@ -3453,48 +2344,23 @@ function isPubliclyVisible(n) {
       if (btn) { btn.textContent = orig; btn.disabled = false; }
     }
 
-    var url = DIRECTORY_API_URL
-      + '?action=login'
-      + '&username=' + encodeURIComponent(code);
-
-    var done  = false;
-    var timer = setTimeout(function() {
-      if (done) return;
-      done = true;
-      resetBtn();
-      shakeGate_('Server timed out. Please try again in a moment.');
-    }, 15000);
+    var url = DIRECTORY_API_URL + '?action=login&username=' + encodeURIComponent(code);
 
     fetch(url)
-      .then(function(r) { return r.text(); })
-      .then(function(txt) {
-        if (done) return;
-        done = true;
-        clearTimeout(timer);
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
         resetBtn();
-
-        var data;
-        try { data = JSON.parse(txt); }
-        catch(e) {
-          shakeGate_('Server error. Please try again.');
-          return;
-        }
-
         if (!data.success) {
           shakeGate_(data.error || 'Access code not recognised.');
           return;
         }
-
         window._cioreCurrentUser = data.user;
         var role = (data.user && data.user.role === 'admin') ? 'admin' : 'contributor';
         doLogin(role);
       })
       .catch(function(err) {
-        if (done) return;
-        done = true;
-        clearTimeout(timer);
         resetBtn();
-        shakeGate_('Could not reach the server. Please check your connection.');
+        shakeGate_('Could not reach the server.');
       });
   };
 
@@ -3507,75 +2373,63 @@ function isPubliclyVisible(n) {
       err.classList.add('show');
       setTimeout(function() { err.classList.remove('show'); }, 5000);
     }
-    var uEl = document.getElementById('pwUsername');
-    if (uEl) { uEl.value = ''; uEl.focus(); }
   }
 
-  var overlay     = document.getElementById('submissionOverlay');
-  var subForm     = document.getElementById('subForm');
-  var subIframe   = document.getElementById('subTarget');
-  var subFormView = document.getElementById('subFormView');
-  var subSuccess  = document.getElementById('subSuccess');
-  var subError    = document.getElementById('subError');
-  var subSubmitBtn= document.getElementById('subSubmitBtn');
-  var subBtnText  = document.getElementById('subBtnText');
-
-  function openOverlay() {
-    if (overlay) { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-  }
-  function closeOverlay() {
-    if (overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; }
-    if (subForm) subForm.reset();
-    if (subFormView) subFormView.style.display = '';
-    if (subSuccess)  subSuccess.style.display  = 'none';
-    if (subError)    subError.style.display    = 'none';
-    if (subSubmitBtn) { subSubmitBtn.disabled = false; }
-    if (subBtnText)   { subBtnText.textContent = 'Request Access'; }
-  }
+  var overlay = document.getElementById('submissionOverlay');
+  function openOverlay() { if (overlay) { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; } }
+  function closeOverlay() { if (overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; } }
 
   var noCredsBtn = document.getElementById('gateNoCreds');
   if (noCredsBtn) noCredsBtn.addEventListener('click', openOverlay);
 
   var closeBtn = document.getElementById('subOverlayClose');
   if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
+})();
 
-  var closeSuccess = document.getElementById('subCloseSuccess');
-  if (closeSuccess) closeSuccess.addEventListener('click', closeOverlay);
+(function() {
+  window.openCM = function() {
+    document.getElementById('cmOverlay').classList.add('open');
+    cmLoad();
+  };
+  window.closeCM = function() {
+    document.getElementById('cmOverlay').classList.remove('open');
+  };
 
-  var retryBtn = document.getElementById('subRetry');
-  if (retryBtn) retryBtn.addEventListener('click', function() {
-    if (subError)    subError.style.display    = 'none';
-    if (subFormView) subFormView.style.display = '';
-  });
+  window.cmLoad = function() {
+    var btn = document.getElementById('cmRefreshBtn');
+    var loading = document.getElementById('cmLoading');
+    if (btn) { btn.disabled = true; btn.textContent = 'Loading…'; }
+    if (loading) loading.style.display = 'block';
 
-  if (overlay) overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeOverlay();
-  });
-
-  if (subForm) {
-    subForm.addEventListener('submit', function(e) {
-      var first = document.getElementById('subFirst');
-      var last  = document.getElementById('subLast');
-      var role  = document.getElementById('subRole');
-      var ok = true;
-      [first, last, role].forEach(function(el) {
-        if (!el) return;
-        if (!el.value.trim()) { el.classList.add('cf-error'); ok = false; }
-        else                   el.classList.remove('cf-error');
+    fetch(DIRECTORY_API_URL + '?action=getContributors')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (btn) { btn.disabled = false; btn.textContent = 'Refresh'; }
+        if (loading) loading.style.display = 'none';
+      })
+      .catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = 'Refresh'; }
+        if (loading) loading.style.display = 'none';
       });
-      if (!ok) { e.preventDefault(); return; }
+  };
 
-      if (subSubmitBtn) subSubmitBtn.disabled = true;
-      if (subBtnText)   subBtnText.textContent = 'Sending…';
+  window.cmSwitchTab = function(tab) {
+    ['pending','active','all'].forEach(function(t) {
+      var el = document.getElementById('cmTab-' + t);
+      if (el) el.classList.toggle('cm-active', t === tab);
+      var p = document.getElementById('cmPanel-' + t);
+      if (p) p.classList.toggle('cm-active', t === tab);
     });
-  }
+  };
+})();
 
-  if (subIframe) {
-    subIframe.addEventListener('load', function() {
-      if (subBtnText && subBtnText.textContent === 'Sending…') {
-        if (subFormView) subFormView.style.display = 'none';
-        if (subSuccess)  subSuccess.style.display  = 'block';
-        if (subSubmitBtn) subSubmitBtn.disabled = false;
-        if (subBtnText)   subBtnText.textContent = 'Request Access';
-      }
-Sorry, something went wrong. Please try your request again.
+function doLogin(role) {
+  var gate = document.getElementById('gate');
+  if (gate) { gate.style.display = 'none'; }
+  var app = document.getElementById('app');
+  if (app) { app.style.display = 'flex'; app.classList.add('on'); }
+  if (window.navigateTo) window.navigateTo('p0home');
+}
+</script>
+</body>
+</html>
